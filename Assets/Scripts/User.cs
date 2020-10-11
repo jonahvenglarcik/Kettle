@@ -26,7 +26,7 @@ public class User
         chatHistory = null;
     }
 
-    public User(string realName, string userName, GeoCoordinate location
+    public User(string realName, string userName, GeoCoordinate location,
         Radius currentRadius, ArrayList<Chunk> currentChunks,
         ArrayList<Post> pinnedPosts, Chat chatHistory)
     {
