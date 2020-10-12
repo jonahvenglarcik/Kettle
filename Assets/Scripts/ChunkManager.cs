@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class ChunkManager : MonoBehaviour
+public class ChunkManager
 {
     protected List<Chunk> Chunks;
-    protected LocationInfo Center;
+    protected Location Center;
 
     protected const int NumChunkNS = 40040;
-    protected const int NumChunkEW = 40040;
+    protected const int NumChunkEW = 80080;
     protected const float ChunkLoadDist = 1.5f;
 
     //measured in km
@@ -18,8 +18,29 @@ public class ChunkManager : MonoBehaviour
     public ChunkManager()
     {
         //Initialize location sensing
-        EnableLocationListening();
-        Center = Input.location.lastData;
+        //EnableLocationListening();
+        //Center = Input.location.lastData;
+        Chunks = new List<Chunk>();
+    }
+
+    public override string ToString()
+    {
+        string res = "";
+        res += "Current Location: " + Center.GetLatitude().ToString() + ", " + Center.GetLongitude().ToString() + "\n";
+        foreach(Chunk chunk in Chunks)
+        {
+            res += chunk.ToString() + "\n";
+        }
+        return res;
+    }
+
+    public void MVPTestSuite()
+    {
+        Location cloc = new Location(20f, 20f);
+        Location lu1 = new Location(19.998f, 19.9961f);
+        Location lu2 = new Location(19.999f, 19.997f);
+        Location lu3 = new Location(20.0002f, 19.9985f);
+        User u1 = new User("User One", "user1", lu1);
     }
 
     private IEnumerator EnableLocationListening()
@@ -56,11 +77,12 @@ public class ChunkManager : MonoBehaviour
 
     //Updates the user's location
     //This method must be called for each liaison with server
-    public void UpdateCenter()
+    public void UpdateCenter(Location location)
     {
         //Assertion statement for Location listening status
 
-        Center = Input.location.lastData;
+        //Center = Input.location.lastData;
+        Center = location;
         UpdateChunks();
     }
 
@@ -80,9 +102,9 @@ public class ChunkManager : MonoBehaviour
         // one of these numbers may be negative. This is intended behavior,
         // Wrapping is handled in GrabChunkFromServer method).
         int minChunkEW = (int)(centerChunkEW - 
-            Math.Ceiling(ChunkLoadDist / ChunkWidth(Center.latitude)));
+            Math.Ceiling(ChunkLoadDist / ChunkWidth(Center.GetLatitude())));
         int maxChunkEW = (int)(centerChunkEW + 
-            Math.Ceiling(ChunkLoadDist / ChunkWidth(Center.latitude)));
+            Math.Ceiling(ChunkLoadDist / ChunkWidth(Center.GetLatitude())));
 
         //Chunks = new ArrayList<Chunk>
         int n;
@@ -142,15 +164,15 @@ public class ChunkManager : MonoBehaviour
 
 
     //gets the north/south index of the chunk containing the point at location
-    private static int GetChunkNumNS(LocationInfo location)
+    private static int GetChunkNumNS(Location location)
     {
-        return (int)Math.Round((location.latitude + 90.0) / 180.0 * NumChunkNS);
+        return (int)((location.GetLatitude() + 90.0) / 180.0 * NumChunkNS);
     }
 
     //gets the east/west index of the chunk containing the point at location
-    private static int GetChunkNumEW(LocationInfo location)
+    private static int GetChunkNumEW(Location location)
     {
-        return (int)Math.Round((location.longitude + 180) / 360.0 * NumChunkEW);
+        return (int)((location.GetLongitude() + 180) / 360.0 * NumChunkEW);
     }
 
     private static float ChunkHeight()
@@ -161,5 +183,15 @@ public class ChunkManager : MonoBehaviour
     private static float ChunkWidth(float latitude)
     {
         return (float)(EarthHalfCirc * 2 * Math.Cos(latitude / 180 * Math.PI) / NumChunkEW);
+    }
+
+    private static float ChunkLatitude(int chunkIndexNS)
+    {
+        return ((float)chunkIndexNS / NumChunkNS) * 180f - 90f;
+    }
+
+    private static float ChunkLogitude(int chunkIndexEW)
+    {
+        return ((float)chunkIndexEW / NumChunkEW) * 360f - 180f;
     }
 }

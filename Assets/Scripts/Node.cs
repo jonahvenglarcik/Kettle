@@ -4,36 +4,59 @@ using System.Reflection;
 using UnityEngine;
 using System.Threading;
 
+
+/*
+ * Implementation of Nodes to be stored in Chunks and Radius, and for
+ * communication with server.
+ */
 public class Node
 {
-    List<Post> posts;
-    LocationInfo location; //TODO: We might have classes that do this
-    public Node(LocationInfo loc) 
+    protected List<Post> Posts;
+    Location Location;
+
+    //Constructor for new empty node
+    public Node(Location loc) 
     {
-        posts = new List<Post>();
-        location = loc;
+        Posts = new List<Post>();
+        Location = loc;
+    }
+
+    //Constructor for node containing a set of posts
+    public Node(Location loc, List<Post> posts)
+    {
+        Posts = posts;
+        Location = loc;
     }
 
     public List<Post> GetPosts() 
     {
-        return posts;
+        return Posts;
     }
 
-    public LocationInfo GetLocation() 
+    public Location GetLocation() 
     {
-        return location;
+        return Location;
     }
 
     public void addPost(Post post) 
     {
-        posts.Add(post);
+        Posts.Add(post);
     }
 
     public void removePost(Post post)
     {
-        posts.Remove(post);
+        Posts.Remove(post);
     }
 
 
-   
+   public override string ToString()
+    {
+        string res = "";
+        res += "Node at " + location.GetLatitude() + ", " + location.GetLongitude() + ":\n";
+        foreach(Post post in Posts)
+        {
+            res += post.ToString();
+        }
+        return res;
+    }
 }

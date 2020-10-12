@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Microsoft.Win32;
 
-public class Chunk : MonoBehaviour
+public class Chunk
 {
     // coordinates of this chunk in units of chunks
     protected int ChunkNumNS;
@@ -76,5 +76,20 @@ public class Chunk : MonoBehaviour
         return Nodes;
     }
 
-    // determines if any part of chunk is within radius kilometers of point
+    public override string ToString()
+    {
+        string res = "\tChunk At " + ChunkNumNS + ", " + ChunkNumEW + "\n";
+        res += "\tNodes:\n";
+        foreach(Node node in Nodes)
+        {
+            res += node.ToString();
+        }
+        res += "\tUsers:\n";
+        foreach(User user in People)
+        {
+            res += user.ToString();
+        }
+
+        return res;
+    }
 }

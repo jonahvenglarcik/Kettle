@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class TestChunk : MonoBehaviour
@@ -8,11 +9,7 @@ public class TestChunk : MonoBehaviour
     void Start()
     {
         ChunkManager manager = new ChunkManager();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        manager.UpdateCenter(new Location(20.0f, 20.0f));
+        UnityEngine.Debug.Log(manager.ToString());
     }
 }
