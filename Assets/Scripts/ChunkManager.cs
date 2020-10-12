@@ -41,7 +41,8 @@ public class ChunkManager
     public override string ToString()
     {
         string res = "";
-        res += "Current Location: " + Center.GetLatitude().ToString() + ", " + Center.GetLongitude().ToString() + "\n";
+        res += "Current Location: " + Center.GetLatitude().ToString() + ", " + 
+            Center.GetLongitude().ToString() + "\n";
         foreach(Chunk chunk in Chunks)
         {
             res += chunk.ToString() + "\n";
@@ -70,7 +71,8 @@ public class ChunkManager
 
         // Wait until service initializes
         int maxWait = 20;
-        while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
+        while (Input.location.status == LocationServiceStatus.Initializing && 
+            maxWait > 0)
         {
             yield return new WaitForSeconds(1);
             maxWait--;
@@ -156,12 +158,28 @@ public class ChunkManager
     {
         foreach(Chunk chunk in Chunks)
         {
-            if(chunk.GetChunkNumNS() == northSouth && chunk.GetChunkNumEW() == eastWest)
+            if(chunk.GetChunkNumNS() == northSouth && chunk.GetChunkNumEW() == 
+                eastWest)
             {
                 return true;
             }
         }
         return false;
+    }
+
+    // ChunkFromIndex takes chunk indexes, and finds the chunk at that index 
+    // if there is one in the current scope
+    private Chunk ChunkFromIndex(int northSouth, int eastWest)
+    {
+        foreach(Chunk chunk in Chunks)
+        {
+            if(chunk.GetChunkNumNS() == northSouth && chunk.GetChunkNumEW == 
+                eastWest)
+            {
+                return chunk;
+            }
+        }
+        return null;
     }
 
     private Chunk GrabChunkFromServer(int northSouth, int eastWest)
