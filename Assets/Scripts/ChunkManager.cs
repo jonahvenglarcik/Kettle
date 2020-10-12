@@ -173,7 +173,7 @@ public class ChunkManager
     {
         foreach(Chunk chunk in Chunks)
         {
-            if(chunk.GetChunkNumNS() == northSouth && chunk.GetChunkNumEW == 
+            if(chunk.GetChunkNumNS() == northSouth && chunk.GetChunkNumEW() == 
                 eastWest)
             {
                 return chunk;
