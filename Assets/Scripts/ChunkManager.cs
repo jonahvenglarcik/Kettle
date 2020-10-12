@@ -56,7 +56,7 @@ public class ChunkManager
     {
         Location cloc = new Location(20f, 20f);
 
-        // Center Chunk
+        // Center Chunk Users
         Location lu1 = new Location(19.998f, 19.9961f);
         Location lu2 = new Location(19.999f, 19.997f);
         Location lu3 = new Location(20.0002f, 19.9985f);
@@ -64,9 +64,82 @@ public class ChunkManager
         User u2 = new User("User Two", "user2", lu2);
         User u3 = new User("User Three", "user3", lu3);
 
-        // Far right center chunk
+        // Add users to chunk
+        Chunk chunk1 = ChunkFromIndex(GetChunkNumNS(cloc), GetChunkNumEW(cloc));
+        if(chunk1 == null)
+        {
+            UnityEngine.Debug.Log("null value found for chunk1");
+        }
+        else
+        {
+            chunk1.AddUser(u1);
+            chunk1.AddUser(u2);
+            chunk1.AddUser(u3);
+        }
 
-        // Top center chunk
+        // Far right center chunk Users
+        Location lu4 = new Location(19.9965f, 20.016f);
+        Location lu5 = new Location(19.9985f, 20.0152f);
+
+        User u4 = new User("User Four", "user4", lu4);
+        User u5 = new User("User Five", "user5", lu5);
+        Chunk chunkr = ChunkFromIndex(GetChunkNumNS(lu4), GetChunkNumEW(lu4));
+        if(chunkr == null)
+        {
+            UnityEngine.Debug.Log("null value found for chunkr");
+        }
+        else
+        {
+            chunkr.AddUser(u4);
+            chunkr.AddUser(u5);
+        }
+        // Top center chunk Users
+        Location lu6 = new Location(20.010f, 20f);
+        User u6 = new User("User Six", "user6", lu6);
+
+        Chunk chunkt = ChunkFromIndex(GetChunkNumNS(lu6), GetChunkNumEW(lu6));
+        if(chunkt == null)
+        {
+            UnityEngine.Debug.Log("null value found for chunkt");
+        }
+        else
+        {
+            chunkt.AddUser(u6);
+        }
+        // Posts
+        DateTime dt1 = DateTime.Now;
+        DateTime dt2 = new DateTime(2020, 10, 10, 10, 22, 35);
+        DateTime dt3 = new DateTime(2020, 9, 24, 15, 56, 20);
+
+        Post p1 = new Post(u1, "user1 wuz here", dt2, 1);
+        Post p2 = new Post(u2, "user2 wuz here", dt3, 5);
+        Post p3 = new Post(u3, "user3 wuz here", dt1, 1);
+        // Nodes
+        List<Post> lst1 = new List<Post> { p3, p2, p1 };
+        List<Post> lst2 = new List<Post> { p3, p1 };
+
+        Location ln1 = new Location(19.997f, 19.9999f);
+        Location ln2 = new Location(19.9975f, 19.997f);
+
+        Node n1 = new Node(ln1, lst1);
+        Node n2 = new Node(ln2);
+        if (chunk1 == null)
+        {
+            //UnityEngine.Debug.Log("null value found for chunk1");
+        }
+        else
+        {
+            chunk1.AddNode(n1);
+            chunk1.AddNode(n2);
+        }
+        //Far right chunk
+        Location ln3 = new Location(20f, 20.015f);
+        Node n3 = new Node(ln3, lst2);
+
+        if(chunkr != null)
+        {
+            chunkr.AddNode(n3);
+        }
     }
 
     private IEnumerator EnableLocationListening()
