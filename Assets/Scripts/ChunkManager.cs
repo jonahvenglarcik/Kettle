@@ -42,7 +42,8 @@ public class ChunkManager
     public override string ToString()
     {
         string res = "";
-        res += "Current Location: " + Center.GetLatitude().ToString() + ", " + Center.GetLongitude().ToString() + "\n";
+        res += "Current Location: " + Center.GetLatitude().ToString() + ", " +
+            Center.GetLongitude().ToString() + "\n";
         foreach(Chunk chunk in Chunks)
         {
             res += chunk.ToString() + "\n";
@@ -79,7 +80,8 @@ public class ChunkManager
 
         // Wait until service initializes
         int maxWait = 20;
-        while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
+        while (Input.location.status == LocationServiceStatus.Initializing &&
+            maxWait > 0)
         {
             yield return new WaitForSeconds(1);
             maxWait--;
@@ -118,17 +120,17 @@ public class ChunkManager
         int centerChunkEW = GetChunkNumEW(Center);
 
         // Bounds on north/south chunks
-        int minChunkNS = (int)Math.Max(0, centerChunkNS - 
+        int minChunkNS = (int)Math.Max(0, centerChunkNS -
             Math.Ceiling(ChunkLoadDist / ChunkHeight()));
-        int maxChunkNS = (int)Math.Min(NumChunkNS, centerChunkNS + 
+        int maxChunkNS = (int)Math.Min(NumChunkNS, centerChunkNS +
             Math.Ceiling(ChunkLoadDist / ChunkHeight()));
 
         // Bounds on East/West chunks (within a couple kilometers of 180d west,
         // one of these numbers may be negative. This is intended behavior,
         // Wrapping is handled in GrabChunkFromServer method).
-        int minChunkEW = (int)(centerChunkEW - 
+        int minChunkEW = (int)(centerChunkEW -
             Math.Ceiling(ChunkLoadDist / ChunkWidth(Center.GetLatitude())));
-        int maxChunkEW = (int)(centerChunkEW + 
+        int maxChunkEW = (int)(centerChunkEW +
             Math.Ceiling(ChunkLoadDist / ChunkWidth(Center.GetLatitude())));
 
         //Chunks = new ArrayList<Chunk>
@@ -165,12 +167,28 @@ public class ChunkManager
     {
         foreach(Chunk chunk in Chunks)
         {
-            if(chunk.GetChunkNumNS() == northSouth && chunk.GetChunkNumEW() == eastWest)
+            if(chunk.GetChunkNumNS() == northSouth && chunk.GetChunkNumEW() ==
+                eastWest)
             {
                 return true;
             }
         }
         return false;
+    }
+
+    // ChunkFromIndex takes chunk indexes, and finds the chunk at that index
+    // if there is one in the current scope
+    private Chunk ChunkFromIndex(int northSouth, int eastWest)
+    {
+        foreach(Chunk chunk in Chunks)
+        {
+            if(chunk.GetChunkNumNS() == northSouth && chunk.GetChunkNumEW() ==
+                eastWest)
+            {
+                return chunk;
+            }
+        }
+        return null;
     }
 
     private Chunk GrabChunkFromServer(int northSouth, int eastWest)
@@ -187,7 +205,7 @@ public class ChunkManager
         //TODO: manage server communication in later versions
     }
 
-    
+
 
     // gets the north/south index of the chunk containing the point at location
     private static int GetChunkNumNS(Location location)
@@ -214,7 +232,7 @@ public class ChunkManager
             / NumChunkEW);
     }
 
-    // Finds the latitude of the southwest corner of a chunk of a given 
+    // Finds the latitude of the southwest corner of a chunk of a given
     // North/South index
     private static float ChunkLatitude(int chunkIndexNS)
     {
