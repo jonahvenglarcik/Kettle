@@ -6,37 +6,17 @@ using System.Threading;
 
 public class User
 {
+    int userID;
     string realName; 
     string userName;
-    //Radius currentRadius;
-    //List<Chunk> currentChunks;
-    //GeoCoordinate location;
-   // List<Post> pinnedPosts;
-   // Chat chatHistory;
+    LocationInfo location;
 
-    public User(string realName, string userName)//, GeoCoordinate location) 
+    public User(string realName, string userName, LocationInfo location) 
     {
         this.realName = realName;
         this.userName = userName;
-        //this.location = location;
-        //currentRadius = null;
-        //currentChunks = null;
-        //pinnedPosts = null;
-        //chatHistory = null;
+        this.location = location;
     }
-
-    //public User(string realName, string userName GeoCoordinate location,
-    //    Radius currentRadius, ArrayList<Chunk> currentChunks,
-    //    ArrayList<Post> pinnedPosts, Chat chatHistory)
-    //{
-    //    this.realName = realName;
-    //    this.userName = userName;
-    //    //this.location = location;
-    //    //this.currentRadius = currentRadius;
-    //    //this.currentChunks = currentChunks;
-    //    //this.pinnedPosts = pinnedPosts;
-    //    //this.chatHistory = chatHistory;
-    //}
 
     public string GetRealName() 
     {
@@ -48,14 +28,9 @@ public class User
         return userName;
     }
 
-    //public Radius GetRadius() 
-    //{
-    //    return currentRadius;
-    //}
-
-    //public GeoCoordinate GetLocation()
-    //{
-    //    return location;
-    //}
+    public LocationInfo GetLocation()
+    {
+        return location;
+    }
 
 }

@@ -26,7 +26,7 @@ public class Post
 
     public void DownVote() 
     {
-        approvalRating++;
+        approvalRating--;
     }
 
     public User GetAuthor() 
