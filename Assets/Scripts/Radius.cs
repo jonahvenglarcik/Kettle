@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using System;
 
 // DO NOT MODIFY FIELDS IN THIS CLASS, OR FIELDS OUTPUTTED BY THIS CLASS
 
@@ -16,7 +17,7 @@ public class Radius
 
     protected static float LongLength(Location loc)
     {
-        return LatLength * Math.Cos(loc.latitude * Math.PI / 180f)
+        return (float)(LatLength * Math.Cos(loc.GetLatitude() * Math.PI / 180f));
     }
 
     // Device location (loaded continuously from ChunkManager)
@@ -33,8 +34,8 @@ public class Radius
     public void Refresh(Location center)
     {
         this.Center = center;
-        Nodes = new List<Node>;
-        Users = new List<Users>;
+        Nodes = new List<Node>();
+        Users = new List<User>();
     }
 
     public void LoadChunk(Chunk chunk)
@@ -47,7 +48,7 @@ public class Radius
             }
         }
 
-        foreach(User user in chunk.GetUsers())
+        foreach(User user in chunk.GetPeople())
         {
             if(GetDistance(Center, user.GetLocation()) <= Range)
             {
@@ -63,20 +64,24 @@ public class Radius
     // to a reasonable approximation.
     private float GetDistance(Location l1, Location l2)
     {
-        float nsDist = (l2.latitude - l1.latitude) * LatLength;
-        float ewDist = (l2.longitude - l1.longitude) * LongLength(l1);
+        float nsDist = (l2.GetLatitude() - l1.GetLatitude()) * LatLength;
+        float ewDist = (l2.GetLongitude() - l1.GetLongitude()) * 
+            LongLength(l1);
+
+        return (float)Math.Pow((Math.Pow(nsDist, 2) + 
+            Math.Pow(ewDist, 2)), .5);
     }
 
     public override string ToString()
     {
-        string res = "\tChunk At " + ChunkNumNS + ", " + ChunkNumEW + "\n";
+        string res = "\tRadius:";
         res += "\tNodes:\n";
         foreach (Node node in Nodes)
         {
             res += node.ToString();
         }
         res += "\tUsers:\n";
-        foreach (User user in People)
+        foreach (User user in Users)
         {
             res += user.ToString();
         }
