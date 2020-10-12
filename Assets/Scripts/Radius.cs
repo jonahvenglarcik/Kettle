@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using System;
+using Microsoft.Win32;
 
 // DO NOT MODIFY FIELDS IN THIS CLASS, OR FIELDS OUTPUTTED BY THIS CLASS
 
@@ -55,6 +56,16 @@ public class Radius
                 this.Users.Add(user);
             }
         }
+    }
+
+    public List<User> GetUsers()
+    {
+        return Users;
+    }
+
+    public List<Node> GetNodes()
+    {
+        return Nodes;
     }
 
     // Note - this function uses an approximation for the distance that is
