@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Microsoft.Win32;
 
 // ChunkManager manages chunks, and calls necessary functions in Radius object
 // to keep it updated. From outside ChunkManager, the only necessary actions to
@@ -53,10 +54,18 @@ public class ChunkManager
     public void MVPTestSuite()
     {
         Location cloc = new Location(20f, 20f);
+
+        // Center Chunk
         Location lu1 = new Location(19.998f, 19.9961f);
         Location lu2 = new Location(19.999f, 19.997f);
         Location lu3 = new Location(20.0002f, 19.9985f);
         User u1 = new User("User One", "user1", lu1);
+        User u2 = new User("User Two", "user2", lu2);
+        User u3 = new User("User Three", "user3", lu3);
+
+        // Far right center chunk
+
+        // Top center chunk
     }
 
     private IEnumerator EnableLocationListening()
@@ -178,6 +187,7 @@ public class ChunkManager
         //TODO: manage server communication in later versions
     }
 
+    
 
     // gets the north/south index of the chunk containing the point at location
     private static int GetChunkNumNS(Location location)
