@@ -50,16 +50,6 @@ public class ChunkManager
         return res;
     }
 
-    // Delete this function outside of testing branches
-    public void MVPTestSuite()
-    {
-        Location cloc = new Location(20f, 20f);
-        Location lu1 = new Location(19.998f, 19.9961f);
-        Location lu2 = new Location(19.999f, 19.997f);
-        Location lu3 = new Location(20.0002f, 19.9985f);
-        User u1 = new User("User One", "user1", lu1);
-    }
-
     private IEnumerator EnableLocationListening()
     {
         // First, check if user has location service enabled
