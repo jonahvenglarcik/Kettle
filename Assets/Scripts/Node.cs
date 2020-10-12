@@ -12,7 +12,7 @@ using System.Threading;
 public class Node
 {
     protected List<Post> Posts;
-    Location Location;
+    protected Location Location;
 
     //Constructor for new empty node
     public Node(Location loc) 
@@ -28,6 +28,7 @@ public class Node
         Location = loc;
     }
 
+    //Getters and Setters for fields
     public List<Post> GetPosts() 
     {
         return Posts;
@@ -48,11 +49,11 @@ public class Node
         Posts.Remove(post);
     }
 
-
-   public override string ToString()
+    //This method is not implemented for Server communication. 
+    public override string ToString()
     {
         string res = "";
-        res += "Node at " + location.GetLatitude() + ", " + location.GetLongitude() + ":\n";
+        res += "Node at " + Location.GetLatitude() + ", " + Location.GetLongitude() + ":\n";
         foreach(Post post in Posts)
         {
             res += post.ToString();

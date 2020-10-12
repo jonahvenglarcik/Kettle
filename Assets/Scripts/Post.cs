@@ -11,66 +11,63 @@ using UnityEngine;
  */
 public class Post
 {
-    private User author;
-    private string text;
-    private DateTime timeStamp;
-    private int approvalRating;
+    private User Author;
+    private string Text;
+    private DateTime TimeStamp;
+    private int ApprovalRating;
 
     //Constructor for a post just created by the user
     public Post(User author, string text)
     {
-        this.author = author;
-        this.text = text;
-        timeStamp = DateTime.Now;
-        approvalRating = 0;
+        this.Author = author;
+        this.Text = text;
+        TimeStamp = DateTime.Now;
+        ApprovalRating = 1;
     }
 
     //Constructor for a post downloaded from the server
     public Post(User author, string text, DateTime timestamp, int approval)
     {
-        this.author = author;
-        this.text = text;
-        this.timeStamp = timestamp
-        this.approvalRating = approval;
+        this.Author = author;
+        this.Text = text;
+        this.TimeStamp = timestamp;
+        this.ApprovalRating = approval;
     }
 
-    public void UpVote() 
+    // Getters and Setters
+    public void SetApprovalRating(int approval)
     {
-        approvalRating++;
-    }
-
-    public void DownVote() 
-    {
-        approvalRating++;
+        this.ApprovalRating = approval;
     }
 
     public User GetAuthor() 
     {
-        return author;
+        return Author;
     }
 
     public string GetText() 
     {
-        return text;
+        return Text;
     }
 
     public DateTime GetDate() 
     {
-        return timeStamp;
+        return TimeStamp;
     }
 
     public int GetRating() 
     {
-        return approvalRating;
+        return ApprovalRating;
     }
 
+    //Not yet implemented for server commmunications
     public override string ToString()
     {
         string res = "Post:\n";
-        res += "Author:    " + author.GetUserName() + "\n";
-        res += "Timestamp: " + timeStamp.ToString() + "\n";
-        res += "Approval:  " + approvalRating.ToString() + "\n";
-        res += "Text:      " + text + "\n";
+        res += "Author:    " + Author.GetUserName() + "\n";
+        res += "Timestamp: " + TimeStamp.ToString() + "\n";
+        res += "Approval:  " + ApprovalRating.ToString() + "\n";
+        res += "Text:      " + Text + "\n";
 
         return res;
     }

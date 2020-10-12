@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using Microsoft.Win32;
 
+// Chunk class used to store Nodes and People nearby to the user
 public class Chunk
 {
-    // coordinates of this chunk in units of chunks
+    // Chunk indecies
     protected int ChunkNumNS;
     protected int ChunkNumEW;
+
+
     protected List<Node> Nodes;
     protected List<User> People;
 
 
+    //Chunk constructor for chunk with no data loaded from server
     public Chunk(int chunkNumNS, int chunkNumEW)
     {
         ChunkNumNS = chunkNumNS;
@@ -20,7 +24,9 @@ public class Chunk
         People = new List<User>();
     }
 
-    public Chunk(int chunkNumNS, int chunkNumEW, List<Node> nodes, List<User> people)
+    //Chunk constructor for chunk with data loaded from server
+    public Chunk(int chunkNumNS, int chunkNumEW, List<Node> nodes, 
+        List<User> people)
     {
         ChunkNumNS = chunkNumNS;
         ChunkNumEW = chunkNumEW;
@@ -28,6 +34,7 @@ public class Chunk
         People = people;
     }
 
+    //Getters and Setters
     public int GetChunkNumNS()
     {
         return ChunkNumNS;
@@ -76,6 +83,7 @@ public class Chunk
         return Nodes;
     }
 
+    // Not yet implemented for server communications
     public override string ToString()
     {
         string res = "\tChunk At " + ChunkNumNS + ", " + ChunkNumEW + "\n";

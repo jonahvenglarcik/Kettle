@@ -2,34 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Class for storing Latitude and Longitude
 public class Location
 {
-    protected float latitude;
-    protected float longitude;
+    protected float Latitude;
+    protected float Longitude;
 
     public Location(float latitude, float longitude)
     {
-        this.latitude = latitude;
-        this.longitude = longitude;
+        this.Latitude = latitude;
+        this.Longitude = longitude;
     }
 
     public float GetLatitude()
     {
-        return latitude;
+        return Latitude;
     }
 
     public float GetLongitude()
     {
-        return longitude;
+        return Longitude;
     }
 
     public void SetLongitude(float longitude)
     {
-        this.longitude = longitude;
+        this.Longitude = longitude;
     }
 
     public void SetLatitude(float latitude)
     {
-        this.latitude = latitude;
+        this.Latitude = latitude;
     }
 }

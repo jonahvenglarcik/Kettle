@@ -12,63 +12,63 @@ using System.Threading;
  */
 public class User
 {
-    string realName; 
-    string userName;
+    string RealName; 
+    string UserName;
 
     //Leave this field null unless user is within scope
-    Location location;
+    Location Location;
 
     //Constructor for users of an unknown or irrelevant location
     public User(string realName, string userName)
     {
-        this.realName = realName;
-        this.userName = userName;
-        this.location = null;
+        this.RealName = realName;
+        this.UserName = userName;
+        this.Location = null;
     }
 
     //Constructor for users of a known relevant location
     public User(string realName, string userName, Location location) 
     {
-        this.realName = realName;
-        this.userName = userName;
-        this.location = location;
+        this.RealName = realName;
+        this.UserName = userName;
+        this.Location = location;
     }
 
     public void SetRealName(string realName)
     {
-        this.realName = realName;
+        this.RealName = realName;
     }
 
     public void SetUserName(string userName)
     {
-        this.userName = userName;
+        this.UserName = userName;
     }
 
     public void SetLocation(Location location)
     {
-        this.location = location;
+        this.Location = location;
     }
 
     public string GetRealName() 
     {
-        return realName;
+        return RealName;
     }
 
     public string GetUserName()
     {
-        return userName;
+        return UserName;
     }
 
     public Location GetLocation()
     {
-        return location;
+        return Location;
     }
 
     public override string ToString()
     {
-        string res = "User at " + location.GetLatitude() + ", " + location.GetLongitude() + ":\n";
-        res += "Real Name: " + realName + "\n";
-        res += "username:  " + userName + "\n";
+        string res = "User at " + Location.GetLatitude() + ", " + Location.GetLongitude() + ":\n";
+        res += "Real Name: " + RealName + "\n";
+        res += "username:  " + UserName + "\n";
 
         return res;
     }

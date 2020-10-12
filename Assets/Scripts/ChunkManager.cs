@@ -3,21 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+// ChunkManager manages chunks, and calls necessary functions in Radius object
+// to keep it updated. From outside ChunkManager, the only necessary actions to
+// ensure that it works are creating it upon start, and calling the
+// UpdateCenter method every few frames
 public class ChunkManager
 {
     protected List<Chunk> Chunks;
+
+    // should be the coordinates of the device
     protected Location Center;
 
+    // number of chunks you will pass through on a straight line from south to
+    // north poles
     protected const int NumChunkNS = 40040;
+
+    // number of chunks you will pass through on a straight line
+    // circumnavigation
     protected const int NumChunkEW = 80080;
+
+    // All chunks within this distance of the center chunk will be loaded
+    // (rectangular)
     protected const float ChunkLoadDist = 1.5f;
 
-    //measured in km
+    // measured in km, half circumference of the Earth
     protected const float EarthHalfCirc = 20020.0f;
 
+    // Standard constructor for ChunkManager
     public ChunkManager()
     {
-        //Initialize location sensing
+        // Initialize location sensing:
         //EnableLocationListening();
         //Center = Input.location.lastData;
         Chunks = new List<Chunk>();
@@ -34,6 +49,7 @@ public class ChunkManager
         return res;
     }
 
+    // Delete this function outside of testing branches
     public void MVPTestSuite()
     {
         Location cloc = new Location(20f, 20f);
@@ -163,33 +179,40 @@ public class ChunkManager
     }
 
 
-    //gets the north/south index of the chunk containing the point at location
+    // gets the north/south index of the chunk containing the point at location
     private static int GetChunkNumNS(Location location)
     {
         return (int)((location.GetLatitude() + 90.0) / 180.0 * NumChunkNS);
     }
 
-    //gets the east/west index of the chunk containing the point at location
+    // gets the east/west index of the chunk containing the point at location
     private static int GetChunkNumEW(Location location)
     {
         return (int)((location.GetLongitude() + 180) / 360.0 * NumChunkEW);
     }
 
+    // finds the height of each chunk in km
     private static float ChunkHeight()
     {
         return EarthHalfCirc / NumChunkNS;
     }
 
+    // finds the width of each chunk in km at latitude
     private static float ChunkWidth(float latitude)
     {
-        return (float)(EarthHalfCirc * 2 * Math.Cos(latitude / 180 * Math.PI) / NumChunkEW);
+        return (float)(EarthHalfCirc * 2 * Math.Cos(latitude / 180 * Math.PI)
+            / NumChunkEW);
     }
 
+    // Finds the latitude of the southwest corner of a chunk of a given 
+    // North/South index
     private static float ChunkLatitude(int chunkIndexNS)
     {
         return ((float)chunkIndexNS / NumChunkNS) * 180f - 90f;
     }
 
+    // Finds the longitude of the southwest corner of a chunk of a given
+    // East/West index
     private static float ChunkLogitude(int chunkIndexEW)
     {
         return ((float)chunkIndexEW / NumChunkEW) * 360f - 180f;
