@@ -29,12 +29,17 @@ public class ChunkManager
     // measured in km, half circumference of the Earth
     protected const float EarthHalfCirc = 20020.0f;
 
+    protected Radius Radius;
+
     // Standard constructor for ChunkManager
-    public ChunkManager()
+    public ChunkManager(Radius radius)
     {
+        Radius = radius;
         // Initialize location sensing:
-        //EnableLocationListening();
-        //Center = Input.location.lastData;
+        EnableLocationListening();
+
+        
+        //Create chunks list
         Chunks = new List<Chunk>();
     }
 
@@ -85,13 +90,20 @@ public class ChunkManager
 
     //Updates the user's location
     //This method must be called for each liaison with server
-    public void UpdateCenter(Location location)
+    public void UpdateCenter()
     {
         //Assertion statement for Location listening status
 
-        //Center = Input.location.lastData;
-        Center = location;
+        //Set Center
+        LocationInfo temp = Input.location.lastData;
+        Center = new Location(temp.latitude, temp.longitude);
         UpdateChunks();
+
+        Radius.Refresh(Center);
+        foreach(Chunk chunk in Chunks)
+        {
+            Radius.LoadChunk(chunk);
+        }
     }
 
     //Grab all necesssary chunks, remove any unnecessary chunks
