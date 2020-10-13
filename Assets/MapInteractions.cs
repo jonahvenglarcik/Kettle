@@ -20,8 +20,6 @@ public class MapInteractions : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-
-                Debug.Log(Input.mousePosition.x);
                 Instantiate(pin, Input.mousePosition, Quaternion.identity);
             }
         }

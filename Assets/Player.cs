@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x + 2.5f * Time.deltaTime, transform.position.y,
                 transform.position.z);
-            Debug.Log("Move Forward");
         }
 
         if (Input.GetKeyDown(KeyCode.S))
