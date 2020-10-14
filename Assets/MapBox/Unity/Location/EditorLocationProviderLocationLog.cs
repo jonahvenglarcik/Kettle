@@ -58,7 +58,6 @@
 		protected override void SetLocation()
 		{
 			if (null == _locationEnumerator) { return; }
-
 			// no need to check if 'MoveNext()' returns false as LocationLogReader loops through log file
 			_locationEnumerator.MoveNext();
 			_currentLocation = _locationEnumerator.Current;

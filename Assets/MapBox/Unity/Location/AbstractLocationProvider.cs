@@ -23,6 +23,7 @@
 
 		protected virtual void SendLocation(Location location)
 		{
+			//Debug.Log("Location: " + location.LatitudeLongitude);
 			OnLocationUpdated(location);
 		}
 	}

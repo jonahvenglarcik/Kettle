@@ -91,11 +91,10 @@
 
 			PanMapUsingKeyBoard(xMove, zMove);
 
-
 			//pan mouse
 			PanMapUsingTouchOrMouse();
 		}
-
+		
 		void HandleTouch()
 		{
 			float zoomFactor = 0.0f;
@@ -168,6 +167,21 @@
 			}
 		}
 
+		/*
+		 *
+		 *
+		 *
+		 *
+		 *
+		 * WORKING ON THIS PART XDDDDDDDDD
+		 *
+		 *
+		 *
+		 *
+		 * 
+		 */
+
+		public GameObject pin;
 		void UseMeterConversion()
 		{
 			if (Input.GetMouseButtonUp(1))
@@ -179,7 +193,13 @@
 				var pos = _referenceCamera.ScreenToWorldPoint(mousePosScreen);
 
 				var latlongDelta = _mapManager.WorldToGeoPosition(pos);
-				Debug.Log("Latitude: " + latlongDelta.x + " Longitude: " + latlongDelta.y);
+				//Debug.Log("Center: " + _mapManager.CenterLatitudeLongitude);
+				
+				//Debug.Log("Convers: -> " + pos);
+				
+				Vector3 pinLoc = new Vector3(pos.x,0.1f,pos.z);
+				Instantiate(pin, pinLoc, Quaternion.identity);
+				//Debug.Log("Latitude: " + latlongDelta.x + " Longitude: " + latlongDelta.y);
 			}
 
 			if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
