@@ -167,6 +167,19 @@
 			}
 		}
 
+		/*
+		 *
+		 *
+		 *
+		 *
+		 *
+		 * WORKING ON THIS PART XDDDDDDDDD
+		 *
+		 *
+		 *
+		 *
+		 * 
+		 */
 
 		public GameObject pin;
 		void UseMeterConversion()
@@ -180,11 +193,13 @@
 				var pos = _referenceCamera.ScreenToWorldPoint(mousePosScreen);
 
 				var latlongDelta = _mapManager.WorldToGeoPosition(pos);
-				Vector3 mapPos = Conversions.GeoToWorldGlobePosition(latlongDelta,1f);
-				Debug.Log("Convers: -> " + mapPos);
+				//Debug.Log("Center: " + _mapManager.CenterLatitudeLongitude);
 				
-				Instantiate(pin, Conversions.GeoToWorldGlobePosition(latlongDelta, 0f), Quaternion.identity);
-				Debug.Log("Latitude: " + latlongDelta.x + " Longitude: " + latlongDelta.y);
+				//Debug.Log("Convers: -> " + pos);
+				
+				Vector3 pinLoc = new Vector3(pos.x,0.1f,pos.z);
+				Instantiate(pin, pos, Quaternion.identity);
+				//Debug.Log("Latitude: " + latlongDelta.x + " Longitude: " + latlongDelta.y);
 			}
 
 			if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())

@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d778b28d-ea88-4ca6-b87a-126b5d6784e8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kettle/Prefabs/Pin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kettle/Prefabs/Pin.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MapBox/Prefabs/LocationBasedGame.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MapBox/Prefabs/LocationBasedGame.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MapBox/Unity/Location/AbstractLocationProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MapBox/Unity/Location/AbstractLocationProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MapBox/Unity/Location/TransformLocationProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MapBox/Unity/Location/TransformLocationProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MapInteractions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MapInteractions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/AnotherTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/AnotherTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +25,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/TransformLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/MapboxAccess.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MapboxAR/Scripts/Camera/TouchCamera.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/AbstractLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/DeviceLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PinPost.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Map/Strategies/MapPlacementAtLocationCenterStrategy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/EditorLocationProviderLocationLog.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Utilities/Conversions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Map/AbstractMap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Map/TileProviders/RangeAroundTransformTileProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/ImmediatePositionWithLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -33,20 +42,25 @@
     <setting file="file://$PROJECT_DIR$/Assets/MapInteractions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Map/InitializeMapWithLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Examples/6_ZoomableMap/Scripts/SpawnOnMap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/AbstractEditorLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/RotateWithLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/ILocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/GoogleARCore/SDK/InstantPreview/Scripts/InstantPreviewManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/MapBox/Unity/Location/TransformLocationProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/MapBox/Unity/Location/ExampleGpsTraces/Helsinki.txt" />
         <option value="$PROJECT_DIR$/Assets/MapBox/Unity/Location/ExampleGpsTraces/LocationProviderAndroidNative-2.txt" />
         <option value="$PROJECT_DIR$/Assets/asd.cs" />
         <option value="$PROJECT_DIR$/Assets/MapBox/Unity/Location/EditorLocationProviderLocationLog.cs" />
         <option value="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/RotateWithLocationProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/MapInteractions.cs" />
+        <option value="$PROJECT_DIR$/Assets/MapBox/Unity/Map/AbstractMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/MapBox/Unity/Location/TransformLocationProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/MapBox/Unity/Location/AbstractLocationProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/MapInteractions.cs" />
+        <option value="$PROJECT_DIR$/Assets/PinPost.cs" />
         <option value="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" />
       </list>
     </option>
@@ -75,7 +89,7 @@
       <updated>1602200735236</updated>
       <workItem from="1602200748111" duration="945000" />
       <workItem from="1602539268522" duration="10909000" />
-      <workItem from="1602613516644" duration="2411000" />
+      <workItem from="1602613516644" duration="14443000" />
     </task>
     <servers />
   </component>
@@ -100,5 +114,24 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602557433792" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/MapBox/Unity/Utilities/Conversions.cs</url>
+          <line>79</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/MapBox/Unity/Utilities/Conversions.cs" initialLine="79">
+            <startOffsets>
+              <option value="2888" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2920" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

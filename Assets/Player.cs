@@ -1,19 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Mapbox.Unity.Location;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public GameObject TransformLocationProvider;
+    private TransformLocationProvider _transformLocationProvider;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _transformLocationProvider = TransformLocationProvider.GetComponent<TransformLocationProvider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        MovePerson();
+        //MovePerson();
+        if (Input.GetMouseButtonUp(1))
+        {
+            //SetMapChange();
+        }
     }
 
     private void MovePerson()
@@ -38,5 +45,12 @@ public class Player : MonoBehaviour
         {
             transform.Rotate(0,0,0);
         }
+    }
+
+    private void SetMapChange()
+    {
+        _transformLocationProvider.ChangeLocation();
+        //var map = LocationProviderFactory.Instance.mapManager;
+        //map.ResetMap();
     }
 }

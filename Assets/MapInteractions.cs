@@ -18,10 +18,7 @@ public class MapInteractions : MonoBehaviour
     {
         if (onMap)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Instantiate(pin, Input.mousePosition, Quaternion.identity);
-            }
+            // Add code to pin point the locations.
         }
     }
 

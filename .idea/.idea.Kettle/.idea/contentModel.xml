@@ -822,6 +822,7 @@
           </e>
         </e>
         <e p="MapInteractions.cs" t="Include" />
+        <e p="PinPost.cs" t="Include" />
         <e p="Player.cs" t="Include" />
         <e p="Resources" t="Include">
           <e p="MapBox" t="Include">

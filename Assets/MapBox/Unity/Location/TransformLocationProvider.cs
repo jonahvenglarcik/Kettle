@@ -41,6 +41,16 @@ namespace Mapbox.Unity.Location
 			_currentLocation.Timestamp = UnixTimestampUtils.To(DateTime.UtcNow);
 			_currentLocation.IsLocationUpdated = true;
 			_currentLocation.IsUserHeadingUpdated = true;
+			//Debug.Log(_targetTransform.position);
+			//Debug.Log( "CENNTERMERCATOR: " + _map.CenterMercator);
+			//Debug.Log( "RELATIVESCALE: " + _map.WorldRelativeScale);
+			//Debug.Log( "LOCATION SET: " + _targetTransform.GetGeoPosition(_map.CenterMercator, _map.WorldRelativeScale));
+		}
+
+		public void ChangeLocation()
+		{
+			//_targetTransform.position = new Vector3(2.0f,2.0f);
+			Debug.Log(_targetTransform.position);
 		}
 	}
 }
