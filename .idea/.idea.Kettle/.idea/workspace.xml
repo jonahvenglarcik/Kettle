@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d778b28d-ea88-4ca6-b87a-126b5d6784e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kettle/Prefabs/Pin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kettle/Prefabs/Pin.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MapBox/Unity/Location/AbstractLocationProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MapBox/Unity/Location/AbstractLocationProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MapBox/Unity/Location/TransformLocationProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MapBox/Unity/Location/TransformLocationProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MapInteractions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MapInteractions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +81,7 @@
       <updated>1602200735236</updated>
       <workItem from="1602200748111" duration="945000" />
       <workItem from="1602539268522" duration="10909000" />
-      <workItem from="1602613516644" duration="15011000" />
+      <workItem from="1602613516644" duration="15359000" />
     </task>
     <servers />
   </component>
