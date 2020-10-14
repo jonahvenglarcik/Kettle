@@ -198,7 +198,7 @@
 				//Debug.Log("Convers: -> " + pos);
 				
 				Vector3 pinLoc = new Vector3(pos.x,0.1f,pos.z);
-				Instantiate(pin, pinLoc, Quaternion.identity);
+				Instantiate(pin, pos, Quaternion.identity);
 				//Debug.Log("Latitude: " + latlongDelta.x + " Longitude: " + latlongDelta.y);
 			}
 
