@@ -192,8 +192,8 @@
 				//mousePosScreen.z = _referenceCamera.transform.localPosition.y;
 				mousePosScreen.z = _referenceCamera.transform.localPosition.y * 2f + _referenceCamera.transform.localPosition.y / 2;
 				var pos = _referenceCamera.ScreenToWorldPoint(mousePosScreen);
+				pos = new Vector3(pos.x,0.1f, pos.z);
 				var latlongDelta = _mapManager.WorldToGeoPosition(pos);
-				Vector3 pinLoc = new Vector3(pos.x,0.1f,pos.z);
 				Instantiate(pin, pos, Quaternion.identity);
 				//Debug.Log("Latitude: " + latlongDelta.x + " Longitude: " + latlongDelta.y);
 			}
