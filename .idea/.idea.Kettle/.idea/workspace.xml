@@ -4,6 +4,8 @@
     <list default="true" id="d778b28d-ea88-4ca6-b87a-126b5d6784e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AnotherTest.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AnotherTest.unity.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +83,8 @@
       <updated>1602200735236</updated>
       <workItem from="1602200748111" duration="945000" />
       <workItem from="1602539268522" duration="10909000" />
-      <workItem from="1602613516644" duration="15359000" />
+      <workItem from="1602613516644" duration="16380000" />
+      <workItem from="1602718930298" duration="1847000" />
     </task>
     <servers />
   </component>
