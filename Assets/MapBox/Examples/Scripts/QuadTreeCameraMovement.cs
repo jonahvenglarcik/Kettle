@@ -189,14 +189,10 @@
 				var mousePosScreen = Input.mousePosition;
 				//assign distance of camera to ground plane to z, otherwise ScreenToWorldPoint() will always return the position of the camera
 				//http://answers.unity3d.com/answers/599100/view.html
-				mousePosScreen.z = _referenceCamera.transform.localPosition.y;
+				//mousePosScreen.z = _referenceCamera.transform.localPosition.y;
+				mousePosScreen.z = _referenceCamera.transform.localPosition.y * 2f + _referenceCamera.transform.localPosition.y / 2;
 				var pos = _referenceCamera.ScreenToWorldPoint(mousePosScreen);
-
 				var latlongDelta = _mapManager.WorldToGeoPosition(pos);
-				//Debug.Log("Center: " + _mapManager.CenterLatitudeLongitude);
-				
-				//Debug.Log("Convers: -> " + pos);
-				
 				Vector3 pinLoc = new Vector3(pos.x,0.1f,pos.z);
 				Instantiate(pin, pos, Quaternion.identity);
 				//Debug.Log("Latitude: " + latlongDelta.x + " Longitude: " + latlongDelta.y);
