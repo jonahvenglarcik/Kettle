@@ -673,7 +673,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _locationLogFile
       value: 
-      objectReference: {fileID: 4900000, guid: 5f422c6a4a20b4d23880dddebfb4d1ed, type: 3}
+      objectReference: {fileID: 4900000, guid: 5e6bb7224cef35c4788a4817b1c9778d, type: 3}
     - target: {fileID: 1493835386948802305, guid: 35ce2bb4caba9434db5e656796b632b1,
         type: 3}
       propertyPath: m_RootOrder
