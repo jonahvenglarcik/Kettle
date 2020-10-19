@@ -7,7 +7,7 @@ using System;
 // to keep it updated. From outside ChunkManager, the only necessary actions to
 // ensure that it works are creating it upon start, and calling the
 // UpdateCenter method every few frames
-public class ChunkManager
+public class ChunkManager : MonoBehaviour
 {
     protected List<Chunk> Chunks;
 
@@ -30,15 +30,15 @@ public class ChunkManager
     protected const float EarthHalfCirc = 20020.0f;
 
     protected Radius Radius;
+    private int FrameCount;
 
-    // Standard constructor for ChunkManager
-    public ChunkManager(Radius radius)
+    void Start()
     {
-        Radius = radius;
+        this.Radius = new Radius();
         // Initialize location sensing:
         EnableLocationListening();
 
-        
+
         //Create chunks list
         Chunks = new List<Chunk>();
     }
@@ -90,20 +90,32 @@ public class ChunkManager
 
     //Updates the user's location
     //This method must be called for each liaison with server
-    public void UpdateCenter()
+    void Update()
     {
         //Assertion statement for Location listening status
 
-        //Set Center
-        LocationInfo temp = Input.location.lastData;
-        Center = new Location(temp.latitude, temp.longitude);
-        UpdateChunks();
+        //Check how long since last location update
+        FrameCount++;
 
-        Radius.Refresh(Center);
-        foreach(Chunk chunk in Chunks)
+        if(FrameCount >= 60)
         {
-            Radius.LoadChunk(chunk);
+            FrameCount = 0;
+            //Set Center
+            LocationInfo temp = Input.location.lastData;
+            Center = new Location(temp.latitude, temp.longitude);
+            UpdateChunks();
+
+            Radius.Refresh(Center);
+            foreach (Chunk chunk in Chunks)
+            {
+                Radius.LoadChunk(chunk);
+            }
         }
+    }
+
+    public Radius GetRadius()
+    {
+        return this.Radius();
     }
 
     //Grab all necesssary chunks, remove any unnecessary chunks
