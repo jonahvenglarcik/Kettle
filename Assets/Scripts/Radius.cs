@@ -27,11 +27,6 @@ public class Radius
     protected List<Node> Nodes;
     protected List<User> Users;
 
-    public Radius(Location center)
-    {
-        Refresh(center);
-    }
-
     public void Refresh(Location center)
     {
         this.Center = center;

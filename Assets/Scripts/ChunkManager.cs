@@ -115,7 +115,7 @@ public class ChunkManager : MonoBehaviour
 
     public Radius GetRadius()
     {
-        return this.Radius();
+        return this.Radius;
     }
 
     //Grab all necesssary chunks, remove any unnecessary chunks
