@@ -96,6 +96,7 @@ public class ChunkManager : MonoBehaviour
 
         //Check how long since last location update
         FrameCount++;
+        //Maybe change this system to be more specifically based on time
 
         if(FrameCount >= 60)
         {
