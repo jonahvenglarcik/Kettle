@@ -33,6 +33,8 @@
 		private Plane _groundPlane = new Plane(Vector3.up, 0);
 		private bool _dragStartedOnUI = false;
 
+		public PinCanvasActions _PinCanvasActions;
+
 		void Awake()
 		{
 			if (null == _referenceCamera)
@@ -194,7 +196,8 @@
 				var pos = _referenceCamera.ScreenToWorldPoint(mousePosScreen);
 				pos = new Vector3(pos.x,0.1f, pos.z);
 				var latlongDelta = _mapManager.WorldToGeoPosition(pos);
-				Instantiate(pin, pos, Quaternion.identity);
+				GameObject newPin = Instantiate(pin, pos, Quaternion.identity);
+				_PinCanvasActions.UpdatePin(newPin.GetComponent<PinPost>());
 				//Debug.Log("Latitude: " + latlongDelta.x + " Longitude: " + latlongDelta.y);
 			}
 
