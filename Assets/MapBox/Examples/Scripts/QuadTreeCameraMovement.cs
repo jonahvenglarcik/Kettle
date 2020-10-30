@@ -34,6 +34,7 @@
 		private bool _dragStartedOnUI = false;
 
 		public PinCanvasActions _PinCanvasActions;
+		public NewPinMethods _NewPinMethods;
 
 		void Awake()
 		{
@@ -196,8 +197,10 @@
 				var pos = _referenceCamera.ScreenToWorldPoint(mousePosScreen);
 				pos = new Vector3(pos.x,0.1f, pos.z);
 				var latlongDelta = _mapManager.WorldToGeoPosition(pos);
-				GameObject newPin = Instantiate(pin, pos, Quaternion.identity);
-				_PinCanvasActions.UpdatePin(newPin.GetComponent<PinPost>());
+				
+				//GameObject newPin = Instantiate(pin, pos, Quaternion.identity);
+				_NewPinMethods.CreateNewPin();
+				//_PinCanvasActions
 				//Debug.Log("Latitude: " + latlongDelta.x + " Longitude: " + latlongDelta.y);
 			}
 

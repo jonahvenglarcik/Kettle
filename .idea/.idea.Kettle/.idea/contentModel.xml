@@ -823,6 +823,7 @@
           </e>
         </e>
         <e p="MapInteractions.cs" t="Include" />
+        <e p="NewPinMethods.cs" t="Include" />
         <e p="PinCanvasActions.cs" t="Include" />
         <e p="PinCanvasComponents.cs" t="Include" />
         <e p="PinPost.cs" t="Include" />

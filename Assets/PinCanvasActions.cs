@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PinCanvasActions : MonoBehaviour
 {
+    public GameObject pin;
     public GameObject pinCanvasDisplay;
     private PinPost selectedPinPost;
     private PinCanvasComponents _pinCanvasComponents;
