@@ -8,6 +8,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="asd.cs" t="Include" />
+        <e p="CanvasActions.cs" t="Include" />
         <e p="GoogleARCore" t="Include">
           <e p="Examples" t="Include">
             <e p="ComputerVision" t="Include">
@@ -822,6 +823,9 @@
           </e>
         </e>
         <e p="MapInteractions.cs" t="Include" />
+        <e p="NewPinMethods.cs" t="Include" />
+        <e p="PinCanvasActions.cs" t="Include" />
+        <e p="PinCanvasComponents.cs" t="Include" />
         <e p="PinPost.cs" t="Include" />
         <e p="Player.cs" t="Include" />
         <e p="Resources" t="Include">
@@ -1002,6 +1006,7 @@
           </e>
           <e p="UnityARKitPluginSettings.cs" t="Include" />
         </e>
+        <e p="UserCreations.cs" t="Include" />
       </e>
       <e p="Kettle.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
