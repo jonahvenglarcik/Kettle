@@ -30,7 +30,14 @@ public class ChunkManager : MonoBehaviour
     protected const float EarthHalfCirc = 20020.0f;
 
     protected Radius Radius;
-    private int FrameCount;
+
+    //Stores the last time that information was updated from server
+    protected DateTime lastUpdate;
+
+    // This Constructor uses (Hours, Minutes, Seconds)
+    protected TimeSpan UpdateSpan = new TimeSpan(0, 0, 1);
+    // Can also use a constructor with params 
+    // (Days, Hours, Minutes, Seconds, Milliseconds)
 
     void Start()
     {
@@ -94,13 +101,12 @@ public class ChunkManager : MonoBehaviour
     {
         //Assertion statement for Location listening status
 
-        //Check how long since last location update
-        FrameCount++;
-        //Maybe change this system to be more specifically based on time
 
-        if(FrameCount >= 60)
+        DateTime currTime = DateTime.UtcNow;
+        if (currTime > lastUpdate + UpdateSpan)
         {
-            FrameCount = 0;
+            // Run update code here
+
             //Set Center
             LocationInfo temp = Input.location.lastData;
             Center = new Location(temp.latitude, temp.longitude);
@@ -111,7 +117,13 @@ public class ChunkManager : MonoBehaviour
             {
                 Radius.LoadChunk(chunk);
             }
+            // Keep this line
+            lastUpdate = currTime;
         }
+        //Check how long since last location update
+        //Maybe change this system to be more specifically based on time
+
+
     }
 
     public Radius GetRadius()
