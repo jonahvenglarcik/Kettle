@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d778b28d-ea88-4ca6-b87a-126b5d6784e8" name="Default Changelist" comment="" />
+    <list default="true" id="d778b28d-ea88-4ca6-b87a-126b5d6784e8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PinCanvasActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PinCanvasActions.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,29 +16,34 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/TransformLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/MapboxAccess.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MapboxAR/Scripts/Camera/TouchCamera.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/AbstractLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/DeviceLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PinPost.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Map/Strategies/MapPlacementAtLocationCenterStrategy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/EditorLocationProviderLocationLog.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Utilities/Conversions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Map/AbstractMap.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Map/TileProviders/RangeAroundTransformTileProvider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/ImmediatePositionWithLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/asd.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/LocationProviderFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/Location.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MapInteractions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Map/InitializeMapWithLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MapBox/Examples/6_ZoomableMap/Scripts/SpawnOnMap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/AbstractEditorLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/RotateWithLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/ILocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/TransformLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MapboxAR/Scripts/Camera/TouchCamera.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/AbstractLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Map/Strategies/MapPlacementAtLocationCenterStrategy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Utilities/Conversions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Map/TileProviders/RangeAroundTransformTileProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/asd.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MapInteractions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MapBox/Examples/6_ZoomableMap/Scripts/SpawnOnMap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CanvasActions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PinCanvasComponents.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NewPinMethods.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PinCanvasActions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UserCreations.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -46,11 +56,17 @@
         <option value="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/RotateWithLocationProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/MapBox/Unity/Map/AbstractMap.cs" />
         <option value="$PROJECT_DIR$/Assets/MapBox/Unity/Location/TransformLocationProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/MapBox/Unity/Location/AbstractLocationProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/MapInteractions.cs" />
+        <option value="$PROJECT_DIR$/Assets/PinCanvasComponents.cs" />
+        <option value="$PROJECT_DIR$/Assets/UserCreations.cs" />
+        <option value="$PROJECT_DIR$/Assets/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/PinPost.cs" />
+        <option value="$PROJECT_DIR$/Assets/CanvasActions.cs" />
+        <option value="$PROJECT_DIR$/Assets/TypeNewMessageMethods.cs" />
         <option value="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/PinCanvasActions.cs" />
+        <option value="$PROJECT_DIR$/Assets/NewPinMethods.cs" />
       </list>
     </option>
   </component>
@@ -65,6 +81,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TWShift.3" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -80,6 +97,9 @@
       <workItem from="1602539268522" duration="10909000" />
       <workItem from="1602613516644" duration="16380000" />
       <workItem from="1602718930298" duration="4450000" />
+      <workItem from="1603326771512" duration="1462000" />
+      <workItem from="1603736890955" duration="2576000" />
+      <workItem from="1603907766510" duration="5705000" />
     </task>
     <servers />
   </component>
@@ -100,6 +120,14 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="461" y="162" key="SettingsEditor" timestamp="1603911373266">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603911373266" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1603737500401">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603737500401" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1602557433792">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

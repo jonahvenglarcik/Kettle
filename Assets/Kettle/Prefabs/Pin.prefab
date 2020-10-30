@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 7454682131824518289}
   - component: {fileID: 7454682131824518294}
   - component: {fileID: 7454682131824518295}
-  - component: {fileID: 7454682131824518292}
+  - component: {fileID: 1321309653835965000}
   - component: {fileID: 6625661514556785492}
   - component: {fileID: 7878005399335292652}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,8 +82,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &7454682131824518292
-BoxCollider:
+--- !u!135 &1321309653835965000
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -93,7 +93,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 2.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6625661514556785492
 Rigidbody:
@@ -123,3 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b68d3a75c8945b499fd581f37a8ca39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pinCanvasDisplay: {fileID: 6787091719670086726, guid: 8df6333d4e5e9cb4fb8fcaf1927434e9,
+    type: 3}
+  User: {fileID: 6490830736996299054, guid: 40f83b9a600b08e498badaeaed176f7e, type: 3}
