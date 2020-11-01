@@ -27,7 +27,7 @@ public class NewPinMethods : MonoBehaviour
     public void CloseNewPin()
     {
         newPinCanvas.SetActive(false);
-        //RemoveTextField();
+        RemoveTextField();
     }
 
     public void PinPost()
@@ -40,7 +40,7 @@ public class NewPinMethods : MonoBehaviour
         String[] pinInfo = new String[] {titleStr, messageStr};
         
         _QuadTreeCameraMovement.CreatePin(pinInfo,pinPos,mapLoc);
-        //RemoveTextField();
+        RemoveTextField();
     }
 
     private void RemoveTextField()
