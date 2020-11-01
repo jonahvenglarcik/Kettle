@@ -92,7 +92,7 @@
 			float xMove = Input.GetAxis("Horizontal");
 			float zMove = Input.GetAxis("Vertical");
 
-			PanMapUsingKeyBoard(xMove, zMove);
+			//PanMapUsingKeyBoard(xMove, zMove);
 
 			//pan mouse
 			PanMapUsingTouchOrMouse();
@@ -184,23 +184,26 @@
 		 * 
 		 */
 
+		public void CreatePin(String[] pinInfo, Vector3 pos, Vector2d latlongDelta)
+		{
+			GameObject newPin = Instantiate(pin, pos, Quaternion.identity);
+			PinPost pPost = newPin.GetComponent<PinPost>();
+			pPost.SetMessage(pinInfo[0],pinInfo[1],latlongDelta);
+			_PinCanvasActions.UpdatePin(pPost);
+		}
 		public GameObject pin;
 		void UseMeterConversion()
 		{
 			if (Input.GetMouseButtonUp(1))
 			{
 				var mousePosScreen = Input.mousePosition;
-				//assign distance of camera to ground plane to z, otherwise ScreenToWorldPoint() will always return the position of the camera
-				//http://answers.unity3d.com/answers/599100/view.html
-				//mousePosScreen.z = _referenceCamera.transform.localPosition.y;
 				mousePosScreen.z = _referenceCamera.transform.localPosition.y * 2f + _referenceCamera.transform.localPosition.y / 2;
 				var pos = _referenceCamera.ScreenToWorldPoint(mousePosScreen);
 				pos = new Vector3(pos.x,0.1f, pos.z);
 				var latlongDelta = _mapManager.WorldToGeoPosition(pos);
 				
 				//GameObject newPin = Instantiate(pin, pos, Quaternion.identity);
-				_NewPinMethods.CreateNewPin();
-				//_PinCanvasActions
+				_NewPinMethods.CreateNewPin(pos,_mapManager.WorldToGeoPosition(pos));
 				//Debug.Log("Latitude: " + latlongDelta.x + " Longitude: " + latlongDelta.y);
 			}
 
@@ -223,6 +226,7 @@
 				_shouldDrag = false;
 			}
 
+			/*
 			if (_shouldDrag == true)
 			{
 				var changeFromPreviousPosition = _mousePositionPrevious - _mousePosition;
@@ -254,6 +258,7 @@
 					_origin = _mousePosition;
 				}
 			}
+			*/
 		}
 
 		void UseDegreeConversion()

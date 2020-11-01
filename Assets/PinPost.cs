@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Mapbox.Utils;
 using Microsoft.Win32;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,15 +19,16 @@ public class PinPost : MonoBehaviour
     
     private String title;
     private String message;
+
+    private Vector2d latlongDelta;
     void Start()
     {
         color = GetComponent<Renderer>();
         defaultColor = color.material.color;
         highlightColor = Color.cyan;
 
-        title = "A Day In The Park";
-        message = "Hello everyone. Beware a freaking dog is roaming here biting every single person! Even me included.";
-        
+        //title = "";
+        //message = "";
     }
 
     // Update is called once per frame
@@ -53,7 +55,6 @@ public class PinPost : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("Enable Message");
                 _pinCanvasActions.DisplayPinPost(this);
             }
         }
@@ -67,5 +68,12 @@ public class PinPost : MonoBehaviour
     public void UpdateObjects(PinCanvasActions pinCanvasActionsRef)
     {
         _pinCanvasActions = pinCanvasActionsRef;
+    }
+
+    public void SetMessage(String title, String message, Vector2d latlongDelta)
+    {
+        this.title = title;
+        this.message = message;
+        this.latlongDelta = latlongDelta;
     }
 }

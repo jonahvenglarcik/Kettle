@@ -9,6 +9,9 @@
       <e p="Assets" t="Include">
         <e p="asd.cs" t="Include" />
         <e p="CanvasActions.cs" t="Include" />
+        <e p="ClientAPI" t="Include">
+          <e p="ClientAPITest.cs" t="Include" />
+        </e>
         <e p="GoogleARCore" t="Include">
           <e p="Examples" t="Include">
             <e p="ComputerVision" t="Include">
@@ -122,6 +125,9 @@
               </e>
             </e>
           </e>
+        </e>
+        <e p="JsonDotNet" t="Include">
+          <e p="link.xml" t="Include" />
         </e>
         <e p="MapBox" t="Include">
           <e p="Core" t="Include">
@@ -834,9 +840,19 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Chunk.cs" t="Include" />
+          <e p="ChunkManager.cs" t="Include" />
+          <e p="Location.cs" t="Include" />
+          <e p="LocationResponse.cs" t="Include" />
+          <e p="Node.cs" t="Include" />
+          <e p="Post.cs" t="Include" />
+          <e p="PostResponse.cs" t="Include" />
+          <e p="Radius.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="NotesPanelButton.cs" t="Include" />
           </e>
+          <e p="User.cs" t="Include" />
+          <e p="UserResponse.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
