@@ -10,6 +10,9 @@ public class PostResponse
     [JsonProperty("Author")] 
     public UserResponse Author { get; set; }
 
+    [JsonProperty("Title")]
+    public string Title { get; set; }
+
     [JsonProperty("Text")]
     public string Text { get; set; }
 
@@ -20,5 +23,5 @@ public class PostResponse
     public int ApprovalRating { get; set; }
 
     [JsonProperty("NodeLocation")]
-    public ResourceLocation NodeLocation { get; set; }
+    public LocationResponse NodeLocation { get; set; }
 }

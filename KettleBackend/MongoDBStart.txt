@@ -1,3 +1,11 @@
 "C:\Program Files\MongoDB\Server\4.4\bin\mongod.exe" --dbpath="c:\data\db" /**start mongod
 
 "C:\Program Files\MongoDB\Server\4.4\bin\mongo.exe" /**start mongo service
+
+
+
+show dbs
+use <db name>
+show collections
+
+db.collectionName.find()

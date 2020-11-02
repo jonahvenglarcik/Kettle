@@ -6,8 +6,12 @@
 	using UnityEngine;
 	using UnityEngine.EventSystems;
 	using System;
+	using Kettle.ClientAPITest;
+	using Newtonsoft.Json;
+    using System.Globalization;
+    using System.Reflection;
 
-	public class QuadTreeCameraMovement : MonoBehaviour
+    public class QuadTreeCameraMovement : MonoBehaviour
 	{
 		[SerializeField]
 		[Range(1, 20)]
@@ -190,6 +194,37 @@
 			PinPost pPost = newPin.GetComponent<PinPost>();
 			pPost.SetMessage(pinInfo[0],pinInfo[1],latlongDelta);
 			_PinCanvasActions.UpdatePin(pPost);
+
+			LocationResponse location = new LocationResponse();
+            location.Latitude = 150.111f;
+            location.Longitude = 55.010f;
+
+
+            UserResponse author = new UserResponse()
+            {
+                RealName = "reto",
+                UserName = "r98",
+                Location = location
+            };
+
+			PostResponse post = new PostResponse()
+			{
+				Author = author,
+				Title = pinInfo[0],
+				Text = pinInfo[1],
+				TimeStamp = DateTime.Now,
+				ApprovalRating = 0,
+				NodeLocation = location
+			};
+
+
+
+
+			string jsonData = JsonConvert.SerializeObject(post);
+            Debug.Log(jsonData);
+            StartCoroutine(ClientAPITest.Post("http://localhost:3000/postMessage", jsonData));
+
+			//StartCoroutine(ClientAPITest.Get("http://localhost:3000/user/?UserName=rrr10"));
 		}
 		public GameObject pin;
 		void UseMeterConversion()

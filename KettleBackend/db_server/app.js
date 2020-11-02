@@ -66,6 +66,26 @@ app.get('/user', (req, res) => {
 	});
 });
 
+app.post('/postMessage', (req, res) => {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers",
+                "Origin, X-Requested-With, Content-Type, Accept");
+	console.log("enterd post");	
+	
+
+
+	 var post = JSON.stringify(req.body);
+	console.log(post);
+	post = JSON.parse(post);
+	console.log(post);
+	console.log("Post Object Created");
+	database.collection("Posts").insertOne(post, function(err, result) {
+		if (err) throw err;
+		res.send(result.result);
+		
+	});
+});
+
 
 app.listen(3000, () =>{ 
 	console.log('started and listening.');
