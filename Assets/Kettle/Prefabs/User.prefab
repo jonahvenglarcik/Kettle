@@ -56,5 +56,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec13d8f3f0120f4c941af4a66063885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinCanvasDisplay: {fileID: 6787091719670086726, guid: 8df6333d4e5e9cb4fb8fcaf1927434e9,
-    type: 3}
+  pin: {fileID: 1606733618819166, guid: 8f623e0b3327a1b4bbee73a6363ad280, type: 3}
+  pinCanvasDisplay: {fileID: 0}
