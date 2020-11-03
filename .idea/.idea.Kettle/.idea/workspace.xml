@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d778b28d-ea88-4ca6-b87a-126b5d6784e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PinCanvasActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PinCanvasActions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PinPost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PinPost.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +62,11 @@
         <option value="$PROJECT_DIR$/Assets/UserCreations.cs" />
         <option value="$PROJECT_DIR$/Assets/CanvasActions.cs" />
         <option value="$PROJECT_DIR$/Assets/TypeNewMessageMethods.cs" />
-        <option value="$PROJECT_DIR$/Assets/PinCanvasActions.cs" />
         <option value="$PROJECT_DIR$/Assets/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/PinPost.cs" />
         <option value="$PROJECT_DIR$/Assets/NewPinMethods.cs" />
+        <option value="$PROJECT_DIR$/Assets/PinCanvasActions.cs" />
+        <option value="$PROJECT_DIR$/Assets/PinPost.cs" />
       </list>
     </option>
   </component>
@@ -99,6 +101,7 @@
       <workItem from="1603736890955" duration="2576000" />
       <workItem from="1603907766510" duration="5705000" />
       <workItem from="1604174887399" duration="5352000" />
+      <workItem from="1604420686666" duration="2060000" />
     </task>
     <servers />
   </component>

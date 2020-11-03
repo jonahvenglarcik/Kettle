@@ -202,7 +202,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 582232231239051222}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1147200949}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47067c2a74b677b41a30f8a9f45b80d0, type: 3}
@@ -582,6 +582,11 @@ PrefabInstance:
       propertyPath: pinCanvasDisplay
       value: 
       objectReference: {fileID: 1776001459}
+    - target: {fileID: 8928484597655910985, guid: 40f83b9a600b08e498badaeaed176f7e,
+        type: 3}
+      propertyPath: newPinCanvas
+      value: 
+      objectReference: {fileID: 1147200949}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40f83b9a600b08e498badaeaed176f7e, type: 3}
 --- !u!114 &1095032775 stripped
@@ -596,6 +601,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec13d8f3f0120f4c941af4a66063885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1147200949 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 582232230700998609, guid: 788173f308da1dd4a976a68089ed435d,
+    type: 3}
+  m_PrefabInstance: {fileID: 582232231239051222}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1674615596
 PrefabInstance:
   m_ObjectHideFlags: 0
