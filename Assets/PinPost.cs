@@ -44,18 +44,17 @@ public class PinPost : MonoBehaviour
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out hit))
         {
-            if (hit.collider.gameObject.layer == 8)
+            if (hit.collider.gameObject.layer == 8 && hit.collider.gameObject == this.gameObject)
             {
                 color.material.SetColor("_Color",highlightColor);
+                if (Input.GetMouseButtonDown(0) && _pinCanvasActions.CanOpenPin())
+                {
+                    _pinCanvasActions.DisplayPinPost(this);
+                }
             }
             else
             {
                 color.material.SetColor("_Color",defaultColor);
-            }
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                _pinCanvasActions.DisplayPinPost(this);
             }
         }
     }

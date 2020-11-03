@@ -8,6 +8,8 @@ public class PinCanvasActions : MonoBehaviour
 {
     public GameObject pin;
     public GameObject pinCanvasDisplay;
+    public GameObject newPinCanvas;
+    
     private PinPost selectedPinPost;
     private PinCanvasComponents _pinCanvasComponents;
     // Start is called before the first frame update
@@ -36,5 +38,10 @@ public class PinCanvasActions : MonoBehaviour
     public void UpdatePin(PinPost newPin)
     {
         newPin.UpdateObjects(this);
+    }
+    
+    public bool CanOpenPin()
+    {
+        return !(pinCanvasDisplay.active == true || newPinCanvas.active == true);
     }
 }
