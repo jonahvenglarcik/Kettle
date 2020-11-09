@@ -4,10 +4,10 @@ using UnityEngine;
 using Newtonsoft.Json;
 public class LocationResponse
 {
-    [JsonProperty("latitude")]
+    [JsonProperty("Latitude")]
     public float Latitude { get; set; }
 
-    [JsonProperty("longitude")]
+    [JsonProperty("Longitude")]
     public float Longitude { get; set; }
 }
 

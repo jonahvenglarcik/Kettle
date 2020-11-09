@@ -5,7 +5,7 @@ const BodyParser = require("body-parser");
 app.use(express.json());
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
-const MONGO_URL = 'mongodb://localhost:27017/';
+const MONGO_URL = 'mongodb+srv://rrAdmin:Alexre19!@cluster0.87shf.mongodb.net/Kettle_Test?retryWrites=true&w=majority';
 var MongoClient = require('mongodb').MongoClient
 var database, collection;
 var querystring = require('querystring');

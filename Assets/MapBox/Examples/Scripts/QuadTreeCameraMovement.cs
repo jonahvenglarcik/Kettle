@@ -196,8 +196,8 @@
 			_PinCanvasActions.UpdatePin(pPost);
 
 			LocationResponse location = new LocationResponse();
-            location.Latitude = 150.111f;
-            location.Longitude = 55.010f;
+            location.Latitude = (float) latlongDelta.x;
+            location.Longitude = (float) latlongDelta.y;
 
 
             UserResponse author = new UserResponse()
@@ -222,7 +222,7 @@
 
 			string jsonData = JsonConvert.SerializeObject(post);
             Debug.Log(jsonData);
-            StartCoroutine(ClientAPITest.Post("http://localhost:3000/postMessage", jsonData));
+            StartCoroutine(ClientAPITest.Post("https://kettlex-server.herokuapp.com/postMessage", jsonData));
 
 			//StartCoroutine(ClientAPITest.Get("http://localhost:3000/user/?UserName=rrr10"));
 		}

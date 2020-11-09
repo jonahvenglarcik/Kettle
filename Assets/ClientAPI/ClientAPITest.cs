@@ -10,8 +10,9 @@ namespace Kettle.ClientAPITest
     public class ClientAPITest : MonoBehaviour
     {
         // Start is called before the first frame update
-        private string getUrl = "http://localhost:3000/user/?UserName=rrr10";
-        private string postUrl = "http://localhost:3000/user/createCS";
+        private static string baseUrl = "https://kettlex-server.herokuapp.com/";
+        private string getUrl = baseUrl + "user/?UserName=rrr10";
+        private string postUrl = baseUrl + "user/createCS";
 
         void Start()
         {
