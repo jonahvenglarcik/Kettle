@@ -10,6 +10,7 @@
 	using Newtonsoft.Json;
     using System.Globalization;
     using System.Reflection;
+    using System.Collections.Generic;
 
     public class QuadTreeCameraMovement : MonoBehaviour
 	{
@@ -221,10 +222,20 @@
 
 
 			string jsonData = JsonConvert.SerializeObject(post);
-            Debug.Log(jsonData);
-            StartCoroutine(ClientAPITest.Post("https://kettlex-server.herokuapp.com/postMessage", jsonData));
+			//Debug.Log(jsonData);
+			//StartCoroutine(ClientAPITest.Post("https://kettlex-server.herokuapp.com/postMessage", jsonData));
+			string returnData = "";
+			StartCoroutine(ClientAPITest.Get("https://kettlex-server.herokuapp.com/getPostsAroundMe",
+			(string result) => {
+				Debug.Log(result);
+				List<PostResponse> pr = JsonConvert.DeserializeObject<List<PostResponse>>(result);
+				Debug.Log(pr);
+				//Debug.Log("Fields: " + userRes.RealName + ", " + userRes.UserName);
+			}));
+			//UserResponse userRes = JsonConvert.DeserializeObject<UserResponse>(returnData);
+			//Debug.Log("Fields: " + userRes.RealName + ", " + userRes.UserName);
 
-			//StartCoroutine(ClientAPITest.Get("http://localhost:3000/user/?UserName=rrr10"));
+
 		}
 		public GameObject pin;
 		void UseMeterConversion()
