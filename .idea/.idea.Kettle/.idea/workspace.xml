@@ -12,6 +12,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/EditorLocationProviderLocationLog.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ProfilePageInteraction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Map/AbstractMap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/ImmediatePositionWithLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/asd.cs" root0="FORCE_HIGHLIGHTING" />
@@ -63,6 +64,7 @@
         <option value="$PROJECT_DIR$/Assets/NewPinMethods.cs" />
         <option value="$PROJECT_DIR$/Assets/PinCanvasActions.cs" />
         <option value="$PROJECT_DIR$/Assets/PinPost.cs" />
+        <option value="$PROJECT_DIR$/Assets/ProfilePageInteraction.cs" />
         <option value="$PROJECT_DIR$/Assets/Authentication.cs" />
       </list>
     </option>
@@ -79,6 +81,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TWShift.3" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -122,7 +130,10 @@
       <workItem from="1603907766510" duration="5705000" />
       <workItem from="1604174887399" duration="5352000" />
       <workItem from="1604420686666" duration="2673000" />
-      <workItem from="1604912340999" duration="925000" />
+      <workItem from="1604912340999" duration="1895000" />
+      <workItem from="1604967238106" duration="618000" />
+      <workItem from="1605026881910" duration="921000" />
+      <workItem from="1605133574803" duration="124000" />
     </task>
     <servers />
   </component>

@@ -829,6 +829,7 @@
         <e p="PinCanvasComponents.cs" t="Include" />
         <e p="PinPost.cs" t="Include" />
         <e p="Player.cs" t="Include" />
+        <e p="ProfilePageInteraction.cs" t="Include" />
         <e p="Resources" t="Include">
           <e p="MapBox" t="Include">
             <e p="MapboxConfiguration.txt" t="Include" />
