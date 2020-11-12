@@ -34,7 +34,9 @@ namespace Kettle.ClientAPITest
             //StartCoroutine(Post(postUrl, jsonData));
         }
 
-        public static IEnumerator Get(string url)
+        
+
+        public static IEnumerator Get(string url, System.Action<string> result)
         {
             using (UnityWebRequest www = UnityWebRequest.Get(url))
             {
@@ -49,18 +51,28 @@ namespace Kettle.ClientAPITest
                     if (www.isDone)
                     {
                         // handle the result
-                        var result = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
-                        Debug.Log(result);
+                        if (result != null) 
+                        {
+                            var strResult = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
 
-                        UserResponse userRes = JsonConvert.DeserializeObject<UserResponse>(result);
-                        Debug.Log("Fields: " + userRes.RealName + ", " + userRes.UserName + ", "); //+
-                                                                                                   // userRes.Location.Latitude + ", " + userRes.Location.Longitude + "\n");
+                            // result(www.downloadHandler.text);
+                            result(strResult);
+                        }
+                        
+
+                        //UserResponse userRes = JsonConvert.DeserializeObject<UserResponse>(result);
 
                     }
                     else
                     {
                         //handle the problem
-                        Debug.Log("Error! Couldn't GET data.");
+                        Debug.Log(www.error);
+                        if (result != null)
+                        {
+                            result(www.error);
+                        }
+                        
+                        
                     }
                 }
             }
@@ -85,5 +97,7 @@ namespace Kettle.ClientAPITest
             }
         }
     }
+
+    
 }
 
