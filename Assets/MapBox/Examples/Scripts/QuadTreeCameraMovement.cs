@@ -224,12 +224,13 @@
 			string jsonData = JsonConvert.SerializeObject(post);
 			//Debug.Log(jsonData);
 			//StartCoroutine(ClientAPITest.Post("https://kettlex-server.herokuapp.com/postMessage", jsonData));
+			//Onload code starts here*************
 			string returnData = "";
 			StartCoroutine(ClientAPITest.Get("https://kettlex-server.herokuapp.com/getPostsAroundMe",
 			(string result) => {
 				Debug.Log(result);
 				List<PostResponse> pr = JsonConvert.DeserializeObject<List<PostResponse>>(result);
-				Debug.Log(pr);
+				Debug.Log(pr[0].Text);
 				//Debug.Log("Fields: " + userRes.RealName + ", " + userRes.UserName);
 			}));
 			//UserResponse userRes = JsonConvert.DeserializeObject<UserResponse>(returnData);
