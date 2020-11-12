@@ -24,7 +24,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/DeviceLocationProviderAndroidNative.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/RotateWithLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CanvasActions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MapboxAR/Scripts/Camera/TouchCamera.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/ILocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/TransformLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MapBox/Unity/Location/AbstractLocationProvider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -60,12 +59,12 @@
         <option value="$PROJECT_DIR$/Assets/CanvasActions.cs" />
         <option value="$PROJECT_DIR$/Assets/TypeNewMessageMethods.cs" />
         <option value="$PROJECT_DIR$/Assets/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/NewPinMethods.cs" />
         <option value="$PROJECT_DIR$/Assets/PinCanvasActions.cs" />
         <option value="$PROJECT_DIR$/Assets/PinPost.cs" />
         <option value="$PROJECT_DIR$/Assets/ProfilePageInteraction.cs" />
         <option value="$PROJECT_DIR$/Assets/Authentication.cs" />
+        <option value="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" />
       </list>
     </option>
   </component>
@@ -134,6 +133,7 @@
       <workItem from="1604967238106" duration="618000" />
       <workItem from="1605026881910" duration="921000" />
       <workItem from="1605133574803" duration="124000" />
+      <workItem from="1605215988672" duration="996000" />
     </task>
     <servers />
   </component>

@@ -43,6 +43,7 @@
 
 		void Awake()
 		{
+			RetrieveCurrentPins();
 			if (null == _referenceCamera)
 			{
 				_referenceCamera = GetComponent<Camera>();
@@ -54,6 +55,30 @@
 			};
 		}
 
+		private void RetrieveCurrentPins()
+		{
+			StartCoroutine(ClientAPITest.Get("https://kettlex-server.herokuapp.com/getPostsAroundMe",
+				(string result) => {
+					List<PostResponse> pr = JsonConvert.DeserializeObject<List<PostResponse>>(result);
+					Debug.Log(pr);
+					for (int i = 0; i < pr.Count; i++)
+					{
+						String RealName = pr[i].Author.RealName;
+						String UserName = pr[i].Author.UserName;
+						float UserLatitude = pr[i].Author.Location.Latitude;
+						float UserLongitude = pr[i].Author.Location.Longitude;
+						String Title = pr[i].Title;
+						String Text = pr[i].Text;
+						DateTime TimeStamp = pr[i].TimeStamp;
+						int ApprovalRating = pr[i].ApprovalRating;
+						float PostLatitude = pr[i].NodeLocation.Latitude;
+						float PostLongitude = pr[i].NodeLocation.Longitude;
+						Debug.Log(RealName);
+					}
+					//Debug.Log("Fields: " + userRes.RealName + ", " + userRes.UserName);
+				}));
+		}
+		
 		public void Update()
 		{
 			if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject())
@@ -222,9 +247,12 @@
 
 
 			string jsonData = JsonConvert.SerializeObject(post);
-			//Debug.Log(jsonData);
-			//StartCoroutine(ClientAPITest.Post("https://kettlex-server.herokuapp.com/postMessage", jsonData));
+			StartCoroutine(ClientAPITest.Post("https://kettlex-server.herokuapp.com/postMessage", jsonData));
+
+			
+			
 			//Onload code starts here*************
+			/*
 			string returnData = "";
 			StartCoroutine(ClientAPITest.Get("https://kettlex-server.herokuapp.com/getPostsAroundMe",
 			(string result) => {
@@ -236,8 +264,10 @@
 			//UserResponse userRes = JsonConvert.DeserializeObject<UserResponse>(returnData);
 			//Debug.Log("Fields: " + userRes.RealName + ", " + userRes.UserName);
 
+			*/
 
 		}
+		
 		public GameObject pin;
 		void UseMeterConversion()
 		{
