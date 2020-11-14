@@ -231,10 +231,8 @@
 				Debug.Log(result);
 				List<PostResponse> pr = JsonConvert.DeserializeObject<List<PostResponse>>(result);
 				Debug.Log(pr[0].Text);
-				//Debug.Log("Fields: " + userRes.RealName + ", " + userRes.UserName);
 			}));
-			//UserResponse userRes = JsonConvert.DeserializeObject<UserResponse>(returnData);
-			//Debug.Log("Fields: " + userRes.RealName + ", " + userRes.UserName);
+			
 
 
 		}
