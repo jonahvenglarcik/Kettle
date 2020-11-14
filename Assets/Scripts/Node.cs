@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using System.Threading;
+using Mapbox.Unity.Location;
 
 
 /*
@@ -53,7 +54,7 @@ public class Node
     public override string ToString()
     {
         string res = "";
-        res += "Node at " + Location.GetLatitude() + ", " + Location.GetLongitude() + ":\n";
+        res += "Node at " + Location.LatitudeLongitude.x + ", " + Location.LatitudeLongitude.y + ":\n";
         foreach(Post post in Posts)
         {
             res += post.ToString();

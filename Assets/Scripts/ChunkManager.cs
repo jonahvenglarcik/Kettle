@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Mapbox.Unity.Location;
 
 // ChunkManager manages chunks, and calls necessary functions in Radius object
 // to keep it updated. From outside ChunkManager, the only necessary actions to
@@ -34,6 +35,11 @@ public class ChunkManager : MonoBehaviour
     //Stores the last time that information was updated from server
     protected DateTime lastUpdate;
 
+    // Automatically uses the correct locationproviderfactory because of drag& drop in inspector
+    public LocationProviderFactory locationProviderFactory;
+
+    protected ILocationProvider locationProvider;
+
     // This Constructor uses (Hours, Minutes, Seconds)
     protected TimeSpan UpdateSpan = new TimeSpan(0, 0, 1);
     // Can also use a constructor with params 
@@ -43,9 +49,7 @@ public class ChunkManager : MonoBehaviour
     {
         this.Radius = new Radius();
         // Initialize location sensing:
-        EnableLocationListening();
-
-
+        locationProvider = locationProviderFactory.DefaultLocationProvider;
         //Create chunks list
         Chunks = new List<Chunk>();
     }
@@ -53,8 +57,8 @@ public class ChunkManager : MonoBehaviour
     public override string ToString()
     {
         string res = "";
-        res += "Current Location: " + Center.GetLatitude().ToString() + ", " + 
-            Center.GetLongitude().ToString() + "\n";
+        res += "Current Location: " + Center.LatitudeLongitude.x.ToString() + ", " + 
+            Center.LatitudeLongitude.y.ToString() + "\n";
         foreach(Chunk chunk in Chunks)
         {
             res += chunk.ToString() + "\n";
@@ -62,54 +66,19 @@ public class ChunkManager : MonoBehaviour
         return res;
     }
 
-    private IEnumerator EnableLocationListening()
-    {
-        // First, check if user has location service enabled
-        if (!Input.location.isEnabledByUser)
-            yield break;
-
-        // Start service before querying location
-        Input.location.Start();
-
-        // Wait until service initializes
-        int maxWait = 20;
-        while (Input.location.status == LocationServiceStatus.Initializing && 
-            maxWait > 0)
-        {
-            yield return new WaitForSeconds(1);
-            maxWait--;
-        }
-
-        // Service didn't initialize in 20 seconds
-        if (maxWait < 1)
-        {
-            //Throw some error here
-            yield break;
-        }
-
-        // Connection has failed
-        if (Input.location.status == LocationServiceStatus.Failed)
-        {
-            //Throw some error here
-            yield break;
-        }
-    }
-
     //Updates the user's location
     //This method must be called for each liaison with server
     void Update()
     {
-        //Assertion statement for Location listening status
-
-
         DateTime currTime = DateTime.UtcNow;
         if (currTime > lastUpdate + UpdateSpan)
         {
             // Run update code here
 
             //Set Center
-            LocationInfo temp = Input.location.lastData;
-            Center = new Location(temp.latitude, temp.longitude);
+            Center = locationProvider.CurrentLocation;
+            UnityEngine.Debug.Log("Position: " + Center.LatitudeLongitude.x + ", " + Center.LatitudeLongitude.y);
+
             UpdateChunks();
 
             Radius.Refresh(Center);
@@ -147,9 +116,11 @@ public class ChunkManager : MonoBehaviour
         // one of these numbers may be negative. This is intended behavior,
         // Wrapping is handled in GrabChunkFromServer method).
         int minChunkEW = (int)(centerChunkEW - 
-            Math.Ceiling(ChunkLoadDist / ChunkWidth(Center.GetLatitude())));
+            Math.Ceiling(ChunkLoadDist / ChunkWidth((float)
+            Center.LatitudeLongitude.x)));
         int maxChunkEW = (int)(centerChunkEW + 
-            Math.Ceiling(ChunkLoadDist / ChunkWidth(Center.GetLatitude())));
+            Math.Ceiling(ChunkLoadDist / ChunkWidth((float)
+            Center.LatitudeLongitude.x)));
 
         //Chunks = new ArrayList<Chunk>
         int n;
@@ -180,6 +151,7 @@ public class ChunkManager : MonoBehaviour
             }
         }
     }
+
 
     private bool ChunksContains(int northSouth, int eastWest)
     {
@@ -227,13 +199,13 @@ public class ChunkManager : MonoBehaviour
     // gets the north/south index of the chunk containing the point at location
     private static int GetChunkNumNS(Location location)
     {
-        return (int)((location.GetLatitude() + 90.0) / 180.0 * NumChunkNS);
+        return (int)((location.LatitudeLongitude.x + 90.0) / 180.0 * NumChunkNS);
     }
 
     // gets the east/west index of the chunk containing the point at location
     private static int GetChunkNumEW(Location location)
     {
-        return (int)((location.GetLongitude() + 180) / 360.0 * NumChunkEW);
+        return (int)((location.LatitudeLongitude.y + 180) / 360.0 * NumChunkEW);
     }
 
     // finds the height of each chunk in km

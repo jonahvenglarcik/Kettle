@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using System.Threading;
+using Mapbox.Unity.Location;
 
 
 /*
@@ -23,7 +24,6 @@ public class User
     {
         this.RealName = realName;
         this.UserName = userName;
-        this.Location = null;
     }
 
     //Constructor for users of a known relevant location
@@ -66,7 +66,7 @@ public class User
 
     public override string ToString()
     {
-        string res = "User at " + Location.GetLatitude() + ", " + Location.GetLongitude() + ":\n";
+        string res = "User at " + Location.LatitudeLongitude.x + ", " + Location.LatitudeLongitude.y + ":\n";
         res += "Real Name: " + RealName + "\n";
         res += "username:  " + UserName + "\n";
 
