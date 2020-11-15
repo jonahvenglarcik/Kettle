@@ -37,13 +37,13 @@
 		private bool _isInitialized = false;
 		private Plane _groundPlane = new Plane(Vector3.up, 0);
 		private bool _dragStartedOnUI = false;
+		private bool setUp;
 
 		public PinCanvasActions _PinCanvasActions;
 		public NewPinMethods _NewPinMethods;
 
 		void Awake()
 		{
-			RetrieveCurrentPins();
 			if (null == _referenceCamera)
 			{
 				_referenceCamera = GetComponent<Camera>();
@@ -57,10 +57,10 @@
 
 		private void RetrieveCurrentPins()
 		{
+			setUp = true;
 			StartCoroutine(ClientAPITest.Get("https://kettlex-server.herokuapp.com/getPostsAroundMe",
 				(string result) => {
 					List<PostResponse> pr = JsonConvert.DeserializeObject<List<PostResponse>>(result);
-					Debug.Log(pr);
 					for (int i = 0; i < pr.Count; i++)
 					{
 						String RealName = pr[i].Author.RealName;
@@ -73,12 +73,24 @@
 						int ApprovalRating = pr[i].ApprovalRating;
 						float PostLatitude = pr[i].NodeLocation.Latitude;
 						float PostLongitude = pr[i].NodeLocation.Longitude;
-						Debug.Log(RealName);
+						//Debug.Log("Post: " + i + "(" + PostLatitude+","+PostLongitude+")");
+						SetUpPins(PostLatitude, PostLongitude, Title, Text);
 					}
-					//Debug.Log("Fields: " + userRes.RealName + ", " + userRes.UserName);
 				}));
 		}
-		
+
+		private void SetUpPins(float Latitude, float Longitude, String Title, String Text)
+		{
+
+			//_referenceCamera.ScreenToWorldPoint(mousePosScreen);
+			Vector2d pos1 = new Vector2d(Latitude,Longitude);
+			Vector3 pinPos = _mapManager.GeoToWorldPosition(pos1);
+			pinPos = new Vector3(pinPos.x,0.1f,pinPos.z);
+			GameObject newPin = Instantiate(pin, pinPos, Quaternion.identity);
+			PinPost pPost = newPin.GetComponent<PinPost>();
+			pPost.SetMessage(Title,Text,pos1);
+			_PinCanvasActions.UpdatePin(pPost);
+		}
 		public void Update()
 		{
 			if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject())
@@ -108,6 +120,8 @@
 					HandleMouseAndKeyBoard();
 				}
 			}
+			if(!setUp)
+				RetrieveCurrentPins();
 		}
 
 		void HandleMouseAndKeyBoard()
@@ -242,29 +256,9 @@
 				ApprovalRating = 0,
 				NodeLocation = location
 			};
-
-
-
-
+			
 			string jsonData = JsonConvert.SerializeObject(post);
 			StartCoroutine(ClientAPITest.Post("https://kettlex-server.herokuapp.com/postMessage", jsonData));
-
-			
-			
-			//Onload code starts here*************
-			/*
-			string returnData = "";
-			StartCoroutine(ClientAPITest.Get("https://kettlex-server.herokuapp.com/getPostsAroundMe",
-			(string result) => {
-				Debug.Log(result);
-				List<PostResponse> pr = JsonConvert.DeserializeObject<List<PostResponse>>(result);
-				Debug.Log(pr[0].Text);
-				//Debug.Log("Fields: " + userRes.RealName + ", " + userRes.UserName);
-			}));
-			//UserResponse userRes = JsonConvert.DeserializeObject<UserResponse>(returnData);
-			//Debug.Log("Fields: " + userRes.RealName + ", " + userRes.UserName);
-
-			*/
 
 		}
 		
@@ -273,13 +267,14 @@
 		{
 			if (Input.GetMouseButtonUp(1))
 			{
+				RetrieveCurrentPins();
 				var mousePosScreen = Input.mousePosition;
 				mousePosScreen.z = _referenceCamera.transform.localPosition.y * 2f + _referenceCamera.transform.localPosition.y / 2;
 				var pos = _referenceCamera.ScreenToWorldPoint(mousePosScreen);
 				pos = new Vector3(pos.x,0.1f, pos.z);
-				var latlongDelta = _mapManager.WorldToGeoPosition(pos);
-				
-				//GameObject newPin = Instantiate(pin, pos, Quaternion.identity);
+				//Debug.Log(pos);
+				//Debug.Log(_mapManager.WorldToGeoPosition(pos));
+				//Debug.Log("--" + _mapManager.GeoToWorldPosition(_mapManager.WorldToGeoPosition(pos)));
 				_NewPinMethods.CreateNewPin(pos,_mapManager.WorldToGeoPosition(pos));
 				//Debug.Log("Latitude: " + latlongDelta.x + " Longitude: " + latlongDelta.y);
 			}
@@ -302,40 +297,6 @@
 			{
 				_shouldDrag = false;
 			}
-
-			/*
-			if (_shouldDrag == true)
-			{
-				var changeFromPreviousPosition = _mousePositionPrevious - _mousePosition;
-				if (Mathf.Abs(changeFromPreviousPosition.x) > 0.0f || Mathf.Abs(changeFromPreviousPosition.y) > 0.0f)
-				{
-					_mousePositionPrevious = _mousePosition;
-					var offset = _origin - _mousePosition;
-
-					if (Mathf.Abs(offset.x) > 0.0f || Mathf.Abs(offset.z) > 0.0f)
-					{
-						if (null != _mapManager)
-						{
-							float factor = _panSpeed * Conversions.GetTileScaleInMeters((float)0, _mapManager.AbsoluteZoom) / _mapManager.UnityTileSize;
-							var latlongDelta = Conversions.MetersToLatLon(new Vector2d(offset.x * factor, offset.z * factor));
-							var newLatLong = _mapManager.CenterLatitudeLongitude + latlongDelta;
-
-							_mapManager.UpdateMap(newLatLong, _mapManager.Zoom);
-						}
-					}
-					_origin = _mousePosition;
-				}
-				else
-				{
-					if (EventSystem.current.IsPointerOverGameObject())
-					{
-						return;
-					}
-					_mousePositionPrevious = _mousePosition;
-					_origin = _mousePosition;
-				}
-			}
-			*/
 		}
 
 		void UseDegreeConversion()

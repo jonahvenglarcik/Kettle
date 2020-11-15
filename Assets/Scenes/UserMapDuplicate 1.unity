@@ -949,6 +949,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PinCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6787091719670086726, guid: 8df6333d4e5e9cb4fb8fcaf1927434e9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8df6333d4e5e9cb4fb8fcaf1927434e9, type: 3}
 --- !u!1 &1776001459 stripped
@@ -1133,6 +1138,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NewPinCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 582232230700998609, guid: 788173f308da1dd4a976a68089ed435d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 582232230700998622, guid: 788173f308da1dd4a976a68089ed435d,
         type: 3}
