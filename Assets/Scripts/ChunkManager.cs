@@ -225,13 +225,13 @@ public class ChunkManager : MonoBehaviour
 
 
     // gets the north/south index of the chunk containing the point at location
-    private static int GetChunkNumNS(Location location)
+    public static int GetChunkNumNS(Location location)
     {
         return (int)((location.GetLatitude() + 90.0) / 180.0 * NumChunkNS);
     }
 
     // gets the east/west index of the chunk containing the point at location
-    private static int GetChunkNumEW(Location location)
+    public static int GetChunkNumEW(Location location)
     {
         return (int)((location.GetLongitude() + 180) / 360.0 * NumChunkEW);
     }

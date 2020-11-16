@@ -240,7 +240,14 @@
             location.Longitude = (float) latlongDelta.y;
 
 
-            UserResponse author = new UserResponse()
+			Location loc = new Location((float)latlongDelta.x, (float)latlongDelta.y);
+
+			int indexLat = ChunkManager.GetChunkNumNS(loc);
+			Debug.Log("Chunk index for lat " + indexLat);
+			int indexLon = ChunkManager.GetChunkNumEW(loc);
+			Debug.Log("Chunk index for lat " + indexLon);
+
+			UserResponse author = new UserResponse()
             {
                 RealName = "reto",
                 UserName = "r98",
@@ -254,7 +261,9 @@
 				Text = pinInfo[1],
 				TimeStamp = DateTime.Now,
 				ApprovalRating = 0,
-				NodeLocation = location
+				NodeLocation = location,
+				ChunkIndexNS = indexLat,
+				ChunkIndexEW = indexLon
 			};
 			
 			string jsonData = JsonConvert.SerializeObject(post);

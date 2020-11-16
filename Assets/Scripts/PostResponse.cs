@@ -24,4 +24,10 @@ public class PostResponse
 
     [JsonProperty("NodeLocation")]
     public LocationResponse NodeLocation { get; set; }
+
+    [JsonProperty("ChunkIndexNS")]
+    public int ChunkIndexNS { get; set; }
+
+    [JsonProperty("ChunkIndexEW")]
+    public int ChunkIndexEW { get; set; }
 }
