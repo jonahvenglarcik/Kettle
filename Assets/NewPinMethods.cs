@@ -6,6 +6,7 @@ using Mapbox.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 using Image = UnityEngine.UI.Image;
 
 public class NewPinMethods : MonoBehaviour
@@ -22,21 +23,46 @@ public class NewPinMethods : MonoBehaviour
     public Image[] DottedLines;
     public Text TextSizeTracker;
     public Image PinItImage;
+
+    public Sprite OrangeIcon;
+    public Sprite GreyIcon;
     
     private Vector3 pinPos;
     private Vector2d mapLoc;
 
+    private bool titleFilled;
+    private bool messageFilled;
     public Color orangeColor;
+    public Color greyColor;
 
-    private SpriteRenderer PinItImageColor;
+    public Button PostItButton;
+    
+
+    void Start()
+    {
+        
+    }
+
     void Update()
     {
-        orangeColor = new Color(255,173,0);
-        CheckMessage();
+        CheckTitle();
         CheckPinMessage();
-        PinItImage.color = orangeColor;
+        EnablePost();
     }
-    
+
+    private void EnablePost()
+    {
+        if (titleFilled && messageFilled)
+        {
+            PinItImage.color = orangeColor;
+            PostItButton.enabled = true;
+        }
+        else
+        {
+            PinItImage.color = greyColor;
+            PostItButton.enabled = false;
+        }
+    }
     public void CreateNewPin(Vector3 pos, Vector2d mapLoc)
     {
         //PinItImage.sprite
@@ -71,14 +97,40 @@ public class NewPinMethods : MonoBehaviour
         message.text = "";
     }
 
-    public void CheckMessage()
+    public void CheckTitle()
     {
-        
+        if (TitleText.text.Length > 0)
+        {
+            titleFilled = true;
+            PinIcon.sprite = OrangeIcon;
+        }
+        else
+        {
+            titleFilled = false;
+            PinIcon.sprite = GreyIcon;
+        }
     }
 
     public void CheckPinMessage()
     {
         int pinMessageLength = PinMessage.text.Length;
+        if (pinMessageLength > 0)
+        {
+            messageFilled = true;
+            for (int i = 0; i < DottedLines.Length; i++)
+            {
+                DottedLines[i].color = orangeColor;
+            }
+        }
+        else
+        {
+            messageFilled = false;
+            for (int i = 0; i < DottedLines.Length; i++)
+            {
+                DottedLines[i].color = greyColor;
+            }
+        }
+
         TextSizeTracker.text = pinMessageLength + "/300";
         Debug.Log(TextSizeTracker.text);
     }
