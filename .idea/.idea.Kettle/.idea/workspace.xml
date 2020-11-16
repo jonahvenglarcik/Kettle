@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d778b28d-ea88-4ca6-b87a-126b5d6784e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/UserMapDuplicate 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UserMapDuplicate 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NewPinMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NewPinMethods.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,12 +62,12 @@
         <option value="$PROJECT_DIR$/Assets/CanvasActions.cs" />
         <option value="$PROJECT_DIR$/Assets/TypeNewMessageMethods.cs" />
         <option value="$PROJECT_DIR$/Assets/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/NewPinMethods.cs" />
         <option value="$PROJECT_DIR$/Assets/PinCanvasActions.cs" />
         <option value="$PROJECT_DIR$/Assets/PinPost.cs" />
         <option value="$PROJECT_DIR$/Assets/ProfilePageInteraction.cs" />
         <option value="$PROJECT_DIR$/Assets/Authentication.cs" />
         <option value="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/NewPinMethods.cs" />
       </list>
     </option>
   </component>
@@ -147,7 +145,8 @@
       <workItem from="1605026881910" duration="921000" />
       <workItem from="1605133574803" duration="124000" />
       <workItem from="1605215988672" duration="3419000" />
-      <workItem from="1605476559175" duration="3579000" />
+      <workItem from="1605476559175" duration="4696000" />
+      <workItem from="1605526347848" duration="5610000" />
     </task>
     <servers />
   </component>
