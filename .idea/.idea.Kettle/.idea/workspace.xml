@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d778b28d-ea88-4ca6-b87a-126b5d6784e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewPinMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NewPinMethods.cs" afterDir="false" />
-    </list>
+    <list default="true" id="d778b28d-ea88-4ca6-b87a-126b5d6784e8" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,7 +143,7 @@
       <workItem from="1605133574803" duration="124000" />
       <workItem from="1605215988672" duration="3419000" />
       <workItem from="1605476559175" duration="4696000" />
-      <workItem from="1605526347848" duration="5610000" />
+      <workItem from="1605526347848" duration="5811000" />
     </task>
     <servers />
   </component>
