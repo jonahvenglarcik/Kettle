@@ -61,6 +61,7 @@
 			StartCoroutine(ClientAPITest.Get("https://kettlex-server.herokuapp.com/getPostsAroundMe",
 				(string result) => {
 					List<PostResponse> pr = JsonConvert.DeserializeObject<List<PostResponse>>(result);
+					Debug.Log(pr.ToString());
 					for (int i = 0; i < pr.Count; i++)
 					{
 						String RealName = pr[i].Author.RealName;
@@ -249,8 +250,8 @@
 
 			UserResponse author = new UserResponse()
             {
-                RealName = "reto",
-                UserName = "r98",
+                RealName = "ram",
+                UserName = "rrr1",
                 Location = location
             };
 

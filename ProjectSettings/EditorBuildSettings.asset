@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SignIn.unity
     guid: 90c38385556eaa14e8fcadd6c873a42c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UserMapDuplicate.unity
     guid: aa640d065cc5d4e4f81f77980e75403d
+  - enabled: 1
+    path: Assets/Scenes/UserMapDuplicate 1.unity
+    guid: 40e02b5092d933c44bd714eb3b4dc2b8
   m_configObjects: {}

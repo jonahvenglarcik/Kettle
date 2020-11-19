@@ -430,7 +430,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3e7501b24e230d14a8fcca34c394475c, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1242005583, guid: 35ce2bb4caba9434db5e656796b632b1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 35ce2bb4caba9434db5e656796b632b1, type: 3}
 --- !u!4 &976852312 stripped
 Transform:
@@ -468,18 +469,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 976852311}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &976852317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 976852314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a280e3df9ff4d5e499ce9db59e364cde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &976852318
 BoxCollider:
   m_ObjectHideFlags: 0
