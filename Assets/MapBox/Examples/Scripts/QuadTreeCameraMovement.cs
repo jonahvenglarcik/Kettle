@@ -81,8 +81,6 @@
 
 		private void SetUpPins(float Latitude, float Longitude, String Title, String Text)
 		{
-
-			//_referenceCamera.ScreenToWorldPoint(mousePosScreen);
 			Vector2d pos1 = new Vector2d(Latitude,Longitude);
 			Vector3 pinPos = _mapManager.GeoToWorldPosition(pos1);
 			pinPos = new Vector3(pinPos.x,0.1f,pinPos.z);
@@ -276,7 +274,6 @@
 		{
 			if (Input.GetMouseButtonUp(1))
 			{
-				RetrieveCurrentPins();
 				var mousePosScreen = Input.mousePosition;
 				mousePosScreen.z = _referenceCamera.transform.localPosition.y * 2f + _referenceCamera.transform.localPosition.y / 2;
 				var pos = _referenceCamera.ScreenToWorldPoint(mousePosScreen);
