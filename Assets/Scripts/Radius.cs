@@ -4,6 +4,7 @@ using System.Reflection;
 using UnityEngine;
 using System;
 using Microsoft.Win32;
+using Mapbox.Unity.Location;
 
 // DO NOT MODIFY FIELDS IN THIS CLASS, OR FIELDS OUTPUTTED BY THIS CLASS
 
@@ -18,7 +19,7 @@ public class Radius
 
     protected static float LongLength(Location loc)
     {
-        return (float)(LatLength * Math.Cos(loc.GetLatitude() * Math.PI / 180f));
+        return (float)(LatLength * Math.Cos(loc.LatitudeLongitude.x * Math.PI / 180f));
     }
 
     // Device location (loaded continuously from ChunkManager)
@@ -70,8 +71,8 @@ public class Radius
     // to a reasonable approximation.
     private float GetDistance(Location l1, Location l2)
     {
-        float nsDist = (l2.GetLatitude() - l1.GetLatitude()) * LatLength;
-        float ewDist = (l2.GetLongitude() - l1.GetLongitude()) * 
+        float nsDist = (float)(l2.LatitudeLongitude.x - l1.LatitudeLongitude.x * LatLength);
+        float ewDist = (float)(l2.LatitudeLongitude.y - l1.LatitudeLongitude.y) *
             LongLength(l1);
 
         return (float)Math.Pow((Math.Pow(nsDist, 2) + 
