@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Kettle.ClientAPITest;
+using Newtonsoft.Json;
 using Mapbox.Unity.Location;
+
 
 // ChunkManager manages chunks, and calls necessary functions in Radius object
 // to keep it updated. From outside ChunkManager, the only necessary actions to
 // ensure that it works are creating it upon start, and calling the
-// UpdateCenter method every few frames
+// UpdateCenter method every few frame
 public class ChunkManager : MonoBehaviour
 {
     protected List<Chunk> Chunks;
@@ -57,9 +60,9 @@ public class ChunkManager : MonoBehaviour
     public override string ToString()
     {
         string res = "";
-        res += "Current Location: " + Center.LatitudeLongitude.x.ToString() + ", " + 
+        res += "Current Location: " + Center.LatitudeLongitude.x.ToString() + ", " +
             Center.LatitudeLongitude.y.ToString() + "\n";
-        foreach(Chunk chunk in Chunks)
+        foreach (Chunk chunk in Chunks)
         {
             res += chunk.ToString() + "\n";
         }
@@ -107,24 +110,24 @@ public class ChunkManager : MonoBehaviour
         int centerChunkEW = GetChunkNumEW(Center);
 
         // Bounds on north/south chunks
-        int minChunkNS = (int)Math.Max(0, centerChunkNS - 
+        int minChunkNS = (int)Math.Max(0, centerChunkNS -
             Math.Ceiling(ChunkLoadDist / ChunkHeight()));
-        int maxChunkNS = (int)Math.Min(NumChunkNS, centerChunkNS + 
+        int maxChunkNS = (int)Math.Min(NumChunkNS, centerChunkNS +
             Math.Ceiling(ChunkLoadDist / ChunkHeight()));
 
         // Bounds on East/West chunks (within a couple kilometers of 180d west,
         // one of these numbers may be negative. This is intended behavior,
         // Wrapping is handled in GrabChunkFromServer method).
-        int minChunkEW = (int)(centerChunkEW - 
+        int minChunkEW = (int)(centerChunkEW -
             Math.Ceiling(ChunkLoadDist / ChunkWidth((float)
             Center.LatitudeLongitude.x)));
-        int maxChunkEW = (int)(centerChunkEW + 
+        int maxChunkEW = (int)(centerChunkEW +
             Math.Ceiling(ChunkLoadDist / ChunkWidth((float)
             Center.LatitudeLongitude.x)));
 
         //Chunks = new ArrayList<Chunk>
         int n;
-        for(n = 0; n < Chunks.Count; n++)
+        for (n = 0; n < Chunks.Count; n++)
         {
             if (Chunks[n].GetChunkNumNS() > maxChunkNS ||
                 Chunks[n].GetChunkNumNS() < minChunkNS ||
@@ -136,11 +139,11 @@ public class ChunkManager : MonoBehaviour
             }
         }
 
-        for(int x = minChunkEW; x <= maxChunkEW; x++)
+        for (int x = minChunkEW; x <= maxChunkEW; x++)
         {
-            for(int y = minChunkNS; y <= maxChunkNS; y++)
+            for (int y = minChunkNS; y <= maxChunkNS; y++)
             {
-                if(ChunksContains(y, x))
+                if (ChunksContains(y, x))
                 {
                     UpdateChunk(y, x);
                 }
@@ -155,9 +158,9 @@ public class ChunkManager : MonoBehaviour
 
     private bool ChunksContains(int northSouth, int eastWest)
     {
-        foreach(Chunk chunk in Chunks)
+        foreach (Chunk chunk in Chunks)
         {
-            if(chunk.GetChunkNumNS() == northSouth && chunk.GetChunkNumEW() == 
+            if (chunk.GetChunkNumNS() == northSouth && chunk.GetChunkNumEW() ==
                 eastWest)
             {
                 return true;
@@ -170,9 +173,9 @@ public class ChunkManager : MonoBehaviour
     // if there is one in the current scope
     private Chunk ChunkFromIndex(int northSouth, int eastWest)
     {
-        foreach(Chunk chunk in Chunks)
+        foreach (Chunk chunk in Chunks)
         {
-            if(chunk.GetChunkNumNS() == northSouth && chunk.GetChunkNumEW() == 
+            if (chunk.GetChunkNumNS() == northSouth && chunk.GetChunkNumEW() ==
                 eastWest)
             {
                 return chunk;
@@ -181,18 +184,55 @@ public class ChunkManager : MonoBehaviour
         return null;
     }
 
-    private Chunk GrabChunkFromServer(int northSouth, int eastWest)
+    public Chunk GrabChunkFromServer(int northSouth, int eastWest)
     {
         //TODO: manage server communication in later versions
 
         //Default: If no chunk yet exists at location, make a new empty one
         //Always use Default behavior for MVP
+
+
+        //gets either an empty chunk or a non empty chunk, A list of Users and List of Posts
+        //
+
+        
+
+        /*List<PostResponse> posts = new List<PostResponse>();
+
+        StartCoroutine(ClientAPITest.Get(chunkUrl, (string result) =>{
+            Debug.Log(result);
+            posts = JsonConvert.DeserializeObject<List<PostResponse>>(result);
+        }));*/
+        /* StartCoroutine(Kettle.ClientAPITest.Get(chunkUrl,
+                 (string result) => {
+                     List<PostResponse> pr = JsonConvert.DeserializeObject<List<PostResponse>>(result);
+                     Debug.Log(pr.ToString());
+
+                 }));*/
+
+
+     /*   StartCoroutine(ClientAPITest.Get(chunkUrl, (string result) => {
+                        List<PostResponse> pr = JsonConvert.DeserializeObject<List<PostResponse>>(result);
+                        Debug.Log(pr.ToString());
+                       
+                    }));
+*/
+
+
+
         return new Chunk(northSouth, eastWest);
     }
 
     private void UpdateChunk(int northSouth, int eastWest)
     {
         //TODO: manage server communication in later versions
+
+        //server should return the newest info from a the chunk given the time stamp. A complete list of users and a list of 
+        //posts that contains only posts updated since the last time stamp. Where x = previous update, updated posts 
+        //postTimeStamp > x
+
+
+
     }
 
 
@@ -234,4 +274,8 @@ public class ChunkManager : MonoBehaviour
     {
         return ((float)chunkIndexEW / NumChunkEW) * 360f - 180f;
     }
+
 }
+
+
+

@@ -11,8 +11,9 @@
     using System.Globalization;
     using System.Reflection;
     using System.Collections.Generic;
+	using Mapbox.Unity.Location;
 
-    public class QuadTreeCameraMovement : MonoBehaviour
+	public class QuadTreeCameraMovement : MonoBehaviour
 	{
 		[SerializeField]
 		[Range(1, 20)]
@@ -238,9 +239,8 @@
             location.Latitude = (float) latlongDelta.x;
             location.Longitude = (float) latlongDelta.y;
 
-
-			Location loc = new Location((float)latlongDelta.x, (float)latlongDelta.y);
-
+			//Location loc = new Location((float)latlongDelta.x, (float)latlongDelta.y);
+			Location loc = new Location();
 			int indexLat = ChunkManager.GetChunkNumNS(loc);
 			Debug.Log("Chunk index for lat " + indexLat);
 			int indexLon = ChunkManager.GetChunkNumEW(loc);
