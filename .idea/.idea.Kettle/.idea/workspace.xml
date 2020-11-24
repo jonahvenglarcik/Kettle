@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d778b28d-ea88-4ca6-b87a-126b5d6784e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kettle/Prefabs/PinCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kettle/Prefabs/PinCanvas.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/UserMapDuplicate 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UserMapDuplicate 1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
