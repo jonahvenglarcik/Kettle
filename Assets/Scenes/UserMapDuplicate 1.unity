@@ -2868,6 +2868,16 @@ PrefabInstance:
       propertyPath: m_FontData.m_MaxSize
       value: 48
       objectReference: {fileID: 0}
+    - target: {fileID: 4284386023944590282, guid: 8df6333d4e5e9cb4fb8fcaf1927434e9,
+        type: 3}
+      propertyPath: canvasComponents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284386023944590282, guid: 8df6333d4e5e9cb4fb8fcaf1927434e9,
+        type: 3}
+      propertyPath: canvasComponents.Array.data[2]
+      value: 
+      objectReference: {fileID: 1919966652}
     - target: {fileID: 4770014950620637409, guid: 8df6333d4e5e9cb4fb8fcaf1927434e9,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3482,6 +3492,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919754599}
   m_CullTransparentMesh: 0
+--- !u!1 &1919966652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 259005927338345531, guid: 8df6333d4e5e9cb4fb8fcaf1927434e9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1776001458}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1929122106
 GameObject:
   m_ObjectHideFlags: 0
@@ -3801,6 +3817,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 582232231188847729, guid: 788173f308da1dd4a976a68089ed435d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 156.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 582232231188847729, guid: 788173f308da1dd4a976a68089ed435d,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1107.8091
+      objectReference: {fileID: 0}
+    - target: {fileID: 582232231188847729, guid: 788173f308da1dd4a976a68089ed435d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 582232231188847729, guid: 788173f308da1dd4a976a68089ed435d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 800
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 788173f308da1dd4a976a68089ed435d, type: 3}
 --- !u!1001 &3908849872185456050
@@ -3834,6 +3870,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3908849872818614980, guid: a8b9c19399c909d49b699bbf57e2388a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3908849872906826177, guid: a8b9c19399c909d49b699bbf57e2388a,
         type: 3}
