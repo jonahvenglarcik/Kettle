@@ -29,10 +29,12 @@ public class PinCanvasActions : MonoBehaviour
         GameObject[] components = _pinCanvasComponents.getCanvasComponents();
         Text titleText = components[0].GetComponent<Text>();
         Text messageText = components[1].GetComponent<Text>();
+        Text usernameText = components[2].GetComponent<Text>();
 
         String[] message = selectedPinPost.GetMessageInfo();
         titleText.text = message[0];
         messageText.text = message[1];
+        usernameText.text = message[2];
     }
 
     public void UpdatePin(PinPost newPin)
