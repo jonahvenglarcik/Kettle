@@ -74,19 +74,19 @@
 						float PostLatitude = pr[i].NodeLocation.Latitude;
 						float PostLongitude = pr[i].NodeLocation.Longitude;
 						//Debug.Log("Post: " + i + "(" + PostLatitude+","+PostLongitude+")");
-						SetUpPins(PostLatitude, PostLongitude, Title, Text);
+						SetUpPins(PostLatitude, PostLongitude, Title, Text, UserName);
 					}
 				}));
 		}
 
-		private void SetUpPins(float Latitude, float Longitude, String Title, String Text)
+		private void SetUpPins(float Latitude, float Longitude, String Title, String Text, String Username)
 		{
 			Vector2d pos1 = new Vector2d(Latitude,Longitude);
 			Vector3 pinPos = _mapManager.GeoToWorldPosition(pos1);
 			pinPos = new Vector3(pinPos.x,0.1f,pinPos.z);
 			GameObject newPin = Instantiate(pin, pinPos, Quaternion.identity);
 			PinPost pPost = newPin.GetComponent<PinPost>();
-			pPost.SetMessage(Title,Text,pos1);
+			pPost.SetMessage(Title,Text,Username,pos1);
 			_PinCanvasActions.UpdatePin(pPost);
 		}
 		public void Update()
@@ -127,7 +127,7 @@
 			// zoom
 			float scrollDelta = 0.0f;
 			scrollDelta = Input.GetAxis("Mouse ScrollWheel");
-			ZoomMapUsingTouchOrMouse(scrollDelta);
+			//ZoomMapUsingTouchOrMouse(scrollDelta);
 
 
 			//pan keyboard
@@ -278,11 +278,7 @@
 				mousePosScreen.z = _referenceCamera.transform.localPosition.y * 2f + _referenceCamera.transform.localPosition.y / 2;
 				var pos = _referenceCamera.ScreenToWorldPoint(mousePosScreen);
 				pos = new Vector3(pos.x,0.1f, pos.z);
-				//Debug.Log(pos);
-				//Debug.Log(_mapManager.WorldToGeoPosition(pos));
-				//Debug.Log("--" + _mapManager.GeoToWorldPosition(_mapManager.WorldToGeoPosition(pos)));
 				_NewPinMethods.CreateNewPin(pos,_mapManager.WorldToGeoPosition(pos));
-				//Debug.Log("Latitude: " + latlongDelta.x + " Longitude: " + latlongDelta.y);
 			}
 
 			if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
