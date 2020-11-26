@@ -4,44 +4,45 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class Authentication : MonoBehaviour
 {
-    public InputField username;
-    public Image usernameBackground;
-    public InputField password;
-    public Image passwordBackground;
+    // Username field
+    public TMP_InputField usernameField;
+    public Image usernameFieldBackground;
 
+    // Password field
+    public TMP_InputField passwordField;
+    public Image passwordFieldBackground;
+
+    // Set the field to this color when combo is invalid
     public Color wrongColor;
 
-    public String mainScene;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // Scene to load when logging in
+    public string mainScene;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // Hard-coded username/password combo to type in
+    private string username = "cephuez";
+    private string password = "password";
 
     public void LogIn()
     {
         bool correct = CheckLogIn();
+
         if (correct)
         {
             SceneManager.LoadScene(mainScene, LoadSceneMode.Single);
         }
         else
         {
-            usernameBackground.color = Color.red;
-            passwordBackground.color = Color.red;
+            usernameFieldBackground.color = wrongColor;
+            passwordFieldBackground.color = wrongColor;
         }
     }
+
     private bool CheckLogIn()
     {
-        return username.text.ToLower() == "cephuez" && password.text == "password";
+        return usernameField.text == username && passwordField.text == password;
     }
 }
