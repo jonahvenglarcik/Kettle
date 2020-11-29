@@ -474,11 +474,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2334941382791116346, guid: 3c80de058da1cd544a100de1aa139a73,
-        type: 3}
-      propertyPath: mainScene
-      value: UserMapDuplicate
-      objectReference: {fileID: 0}
     - target: {fileID: 7719051488077478551, guid: 3c80de058da1cd544a100de1aa139a73,
         type: 3}
       propertyPath: m_Name

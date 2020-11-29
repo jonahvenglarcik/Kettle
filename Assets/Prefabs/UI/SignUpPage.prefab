@@ -1351,7 +1351,7 @@ MonoBehaviour:
   passwordField: {fileID: 5707867908391271177}
   passwordFieldBackground: {fileID: 6455995740188837348}
   wrongColor: {r: 0.9411765, g: 0.19215687, b: 0.19215687, a: 1}
-  mainScene: 
+  mainScene: UserMapDuplicate 1
 --- !u!1 &7871856692571518811
 GameObject:
   m_ObjectHideFlags: 0
