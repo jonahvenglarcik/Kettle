@@ -18,7 +18,7 @@ public class PinPost : MonoBehaviour
     public Color highlightColor;
     
     private String title;
-    private String message;
+    private String message;    
     private String username;
 
     private Vector2d latlongDelta;
