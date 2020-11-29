@@ -22,8 +22,7 @@
     <list default="true" id="d778b28d-ea88-4ca6-b87a-126b5d6784e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Kettle/Prefabs/UserProfile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kettle/Prefabs/UserProfile.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PinPost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PinPost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +81,6 @@
         <option value="$PROJECT_DIR$/Assets/UserCreations.cs" />
         <option value="$PROJECT_DIR$/Assets/CanvasActions.cs" />
         <option value="$PROJECT_DIR$/Assets/TypeNewMessageMethods.cs" />
-        <option value="$PROJECT_DIR$/Assets/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/ProfilePageInteraction.cs" />
         <option value="$PROJECT_DIR$/Assets/Authentication.cs" />
         <option value="$PROJECT_DIR$/Assets/NewPinMethods.cs" />
@@ -90,6 +88,7 @@
         <option value="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/PinPost.cs" />
         <option value="$PROJECT_DIR$/Assets/UserProfileInteraction.cs" />
+        <option value="$PROJECT_DIR$/Assets/Player.cs" />
       </list>
     </option>
   </component>
@@ -171,7 +170,7 @@
       <workItem from="1605526347848" duration="5811000" />
       <workItem from="1605651908985" duration="3339000" />
       <workItem from="1606344502922" duration="755000" />
-      <workItem from="1606675291890" duration="1057000" />
+      <workItem from="1606675291890" duration="2324000" />
     </task>
     <servers />
   </component>
