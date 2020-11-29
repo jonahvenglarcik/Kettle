@@ -86,7 +86,7 @@
 			Vector2d pos1 = new Vector2d(Latitude,Longitude);
 			Vector3 pinPos = _mapManager.GeoToWorldPosition(pos1);
 			pinPos = new Vector3(pinPos.x,0.1f,pinPos.z);
-			GameObject newPin = Instantiate(pin, pinPos, Quaternion.identity);
+			GameObject newPin = Instantiate(pin, pinPos, pin.transform.rotation);
 			PinPost pPost = newPin.GetComponent<PinPost>();
 			pPost.SetMessage(Title,Text,Username,pos1);
 			_PinCanvasActions.UpdatePin(pPost);

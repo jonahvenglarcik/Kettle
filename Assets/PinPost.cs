@@ -15,7 +15,7 @@ public class PinPost : MonoBehaviour
     private PinCanvasActions _pinCanvasActions;
     private Renderer color;
     private Color defaultColor;
-    private Color highlightColor;
+    public Color highlightColor;
     
     private String title;
     private String message;
@@ -26,7 +26,6 @@ public class PinPost : MonoBehaviour
     {
         color = GetComponent<Renderer>();
         defaultColor = color.material.color;
-        highlightColor = Color.cyan;
 
         //title = "";
         //message = "";
