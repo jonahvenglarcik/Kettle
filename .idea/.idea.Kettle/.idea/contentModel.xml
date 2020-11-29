@@ -731,6 +731,7 @@
         </e>
         <e p="UserCreations.cs" t="Include" />
         <e p="UserInfo.cs" t="Include" />
+        <e p="UserProfileInteraction.cs" t="Include" />
       </e>
       <e p="Kettle.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
