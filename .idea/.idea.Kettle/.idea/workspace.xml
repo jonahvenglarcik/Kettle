@@ -21,11 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d778b28d-ea88-4ca6-b87a-126b5d6784e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kettle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MapBox/Examples/Scripts/QuadTreeCameraMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PinCanvasActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PinCanvasActions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PinPost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PinPost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kettle/Prefabs/PinCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kettle/Prefabs/PinCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kettle/Prefabs/User.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kettle/Prefabs/User.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kettle/Prefabs/UserProfile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kettle/Prefabs/UserProfile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/NewPinCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/NewPinCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/SignUpPage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/SignUpPage.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SignIn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SignIn.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/UserMapDuplicate 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UserMapDuplicate 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +176,7 @@
       <workItem from="1605651908985" duration="3339000" />
       <workItem from="1606344502922" duration="755000" />
       <workItem from="1606675291890" duration="3208000" />
-      <workItem from="1606763934995" duration="359000" />
+      <workItem from="1606763934995" duration="1669000" />
     </task>
     <servers />
   </component>

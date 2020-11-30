@@ -223,7 +223,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 48
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -427,6 +427,7 @@ MonoBehaviour:
   - {fileID: 6787091720725665520}
   - {fileID: 6787091720010372665}
   - {fileID: 259005927338345531}
+  - {fileID: 2236888825685549421}
 --- !u!114 &5535684027733637590
 MonoBehaviour:
   m_ObjectHideFlags: 0
