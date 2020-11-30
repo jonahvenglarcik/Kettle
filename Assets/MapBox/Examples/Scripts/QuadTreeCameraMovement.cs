@@ -76,19 +76,19 @@
 						float PostLatitude = pr[i].NodeLocation.Latitude;
 						float PostLongitude = pr[i].NodeLocation.Longitude;
 						//Debug.Log("Post: " + i + "(" + PostLatitude+","+PostLongitude+")");
-						SetUpPins(PostLatitude, PostLongitude, Title, Text, UserName);
+						SetUpPins(PostLatitude, PostLongitude, Title, Text, UserName,TimeStamp.ToString());
 					}
 				}));
 		}
 
-		private void SetUpPins(float Latitude, float Longitude, String Title, String Text, String Username)
+		private void SetUpPins(float Latitude, float Longitude, String Title, String Text, String Username, String postTime)
 		{
 			Vector2d pos1 = new Vector2d(Latitude,Longitude);
 			Vector3 pinPos = _mapManager.GeoToWorldPosition(pos1);
 			pinPos = new Vector3(pinPos.x,0.1f,pinPos.z);
 			GameObject newPin = Instantiate(pin, pinPos, pin.transform.rotation);
 			PinPost pPost = newPin.GetComponent<PinPost>();
-			pPost.SetMessage(Title,Text,Username,pos1);
+			pPost.SetMessage(Title,Text,Username, postTime,pos1);
 			_PinCanvasActions.UpdatePin(pPost);
 		}
 		public void Update()

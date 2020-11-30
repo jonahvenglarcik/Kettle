@@ -20,6 +20,7 @@ public class PinPost : MonoBehaviour
     private String title;
     private String message;    
     private String username;
+    private String postTime;
 
     private Vector2d latlongDelta;
     void Start()
@@ -61,7 +62,7 @@ public class PinPost : MonoBehaviour
 
     public String[] GetMessageInfo()
     {
-        return new [] {title, message, username};
+        return new [] {title, message, username, postTime};
     }
 
     public void UpdateObjects(PinCanvasActions pinCanvasActionsRef)
@@ -76,11 +77,12 @@ public class PinPost : MonoBehaviour
         this.latlongDelta = latlongDelta;
     }
     
-    public void SetMessage(String title, String message, String username, Vector2d latlongDelta)
+    public void SetMessage(String title, String message, String username, String postTime, Vector2d latlongDelta)
     {
         this.title = title;
         this.message = message;
         this.username = username;
+        this.postTime = postTime;
         this.latlongDelta = latlongDelta;
     }
 }
