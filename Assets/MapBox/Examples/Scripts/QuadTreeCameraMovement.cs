@@ -230,7 +230,7 @@
 
 		public void CreatePin(String[] pinInfo, Vector3 pos, Vector2d latlongDelta)
 		{
-			GameObject newPin = Instantiate(pin, pos, Quaternion.identity);
+			GameObject newPin = Instantiate(pin, pos, pin.transform.rotation);
 			PinPost pPost = newPin.GetComponent<PinPost>();
 			pPost.SetMessage(pinInfo[0],pinInfo[1],latlongDelta);
 			_PinCanvasActions.UpdatePin(pPost);
